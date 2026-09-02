@@ -427,3 +427,15 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+.vercel
+/captures/
+
+# Maquettes Figma : ~220 Mo de PNG 2x, gardés en local uniquement.
+# Les visuels réellement utilisés par le site vivent dans public/.
+/design/
+tsconfig.tsbuildinfo

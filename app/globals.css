@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palette relevée sur le Figma */
+  --color-cream: #fffaf4;
+  --color-sand: #ebe8e4;
+  --color-sage: #a1c6b6;
+  --color-orange: #ef7738;
+  --color-ink: #191919;
+  --color-slate: #585756;
+  --color-steel: #8d8b89;
+
+  --font-sans: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 8px;
+  --radius-pill: 999px;
+
+  /* Rythme horizontal du design (marges 128px à 1920) */
+  --spacing-gutter: 8rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@utility gutter {
+  padding-inline: 1.5rem;
+  @media (width >= 48rem) {
+    padding-inline: 4rem;
+  }
+  @media (width >= 90rem) {
+    padding-inline: 8rem;
+  }
+}
+
+/* Défilement infini pur CSS (bandeaux de texte et de logos) */
+@keyframes marquee-x {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-x var(--marquee-duration, 40s) linear infinite;
+}
+
+.marquee-track[data-reverse="true"] {
+  animation-direction: reverse;
+}
+
+.marquee:hover .marquee-track[data-pause="true"] {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
