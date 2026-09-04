@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-import { projets } from "@/lib/data";
+import { projetsGrille } from "@/lib/projets";
 import { CarteProjet } from "./CarteProjet";
 import { Rail, type RailHandle } from "./Rail";
 import { SectionTitre } from "./SectionTitre";
@@ -33,7 +33,7 @@ export function SectionProjets() {
         speed={26}
         className="mt-10 pl-6 md:pl-16 2xl:pl-32"
       >
-        {projets.map((projet) => (
+        {projetsGrille.map((projet) => (
           <CarteProjet key={projet.slug} projet={projet} />
         ))}
       </Rail>

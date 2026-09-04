@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import type { Projet } from "@/lib/data";
+import type { Projet } from "@/lib/projets";
 import { ImagePlaceholder } from "./ui";
 
 export function CarteProjet({ projet }: { projet: Projet }) {
   return (
     <article className="w-[min(600px,78vw)] shrink-0">
       <div className="relative aspect-[600/470] overflow-hidden rounded-card bg-sand">
-        {projet.image ? (
+        {projet.vignette ? (
           <Image
-            src={projet.image}
+            src={projet.vignette}
             alt={projet.nom}
             fill
             sizes="(max-width: 768px) 78vw, 600px"

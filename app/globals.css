@@ -62,12 +62,34 @@
   animation-direction: reverse;
 }
 
+/* Colonnes verticales du hero « Réalisations ». */
+@keyframes marquee-y {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+.marquee-y-track {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  animation: marquee-y var(--marquee-duration, 40s) linear infinite;
+}
+
+.marquee-y-track[data-reverse="true"] {
+  animation-direction: reverse;
+}
+
 .marquee:hover .marquee-track[data-pause="true"] {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track {
+  .marquee-track,
+  .marquee-y-track {
     animation: none;
   }
   html {

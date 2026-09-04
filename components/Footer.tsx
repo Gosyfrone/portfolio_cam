@@ -10,21 +10,21 @@ export function Footer() {
       <div className="gutter flex flex-wrap items-start justify-between gap-12">
         <nav className="flex flex-wrap gap-4">
           <PillLink
-            href="#projets"
+            href="/#projets"
             className="bg-cream text-orange"
             badgeClassName="bg-orange text-cream"
           >
             Projets
           </PillLink>
           <PillLink
-            href="#evenementiel"
+            href="/#evenementiel"
             className="bg-cream text-sage"
             badgeClassName="bg-sage text-cream"
           >
             Événements
           </PillLink>
           <PillLink
-            href="#a-propos"
+            href="/#a-propos"
             className="bg-cream text-ink"
             badgeClassName="bg-ink text-cream"
           >

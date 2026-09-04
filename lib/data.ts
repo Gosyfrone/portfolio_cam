@@ -1,10 +1,3 @@
-export type Projet = {
-  slug: string;
-  nom: string;
-  tags: string[];
-  image: string | null;
-};
-
 export type Evenement = {
   nom: string;
   ville: string;
@@ -35,42 +28,6 @@ export const servicesEvenementiel = [
   "Gestion logistique",
   "Création de contenus",
   "Communication",
-];
-
-export const projets: Projet[] = [
-  {
-    slug: "solem",
-    nom: "SOLEM",
-    tags: ["Print", "Digital", "Événementiel"],
-    image: "/images/projets/solem.png",
-  },
-  {
-    slug: "bourbon",
-    nom: "BOURBON",
-    tags: ["Print", "Digital", "Identité visuelle"],
-    image: "/images/projets/bourbon.png",
-  },
-  {
-    slug: "asics",
-    nom: "ASICS",
-    tags: ["Print", "Direction artistique", "Design graphique"],
-    image: "/images/projets/asics.png",
-  },
-  // Placeholders — visuels à fournir
-  { slug: "cma-cgm", nom: "CMA CGM", tags: ["Print", "Digital"], image: null },
-  { slug: "carmat", nom: "CARMAT", tags: ["Identité visuelle"], image: null },
-  { slug: "rosajou", nom: "ROSAJOU", tags: ["Branding", "Print"], image: null },
-  { slug: "borealis", nom: "BOREALIS", tags: ["Branding"], image: null },
-  { slug: "peeka", nom: "PEEKA", tags: ["Design graphique"], image: null },
-  { slug: "spirou", nom: "SPIROU", tags: ["Print"], image: null },
-  { slug: "merea", nom: "MEREA", tags: ["Identité visuelle"], image: null },
-  { slug: "bocaud", nom: "BOCAUD", tags: ["Print"], image: null },
-  {
-    slug: "sharly-shaper",
-    nom: "SHARLY SHAPER",
-    tags: ["Branding"],
-    image: null,
-  },
 ];
 
 export const salonsFrancais: Evenement[] = [

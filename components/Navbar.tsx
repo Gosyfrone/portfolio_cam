@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const liens = [
-  { label: "Projets", href: "#projets" },
-  { label: "Événementiel", href: "#evenementiel" },
-  { label: "À propos", href: "#a-propos" },
+  { label: "Projets", href: "/projets" },
+  { label: "Événementiel", href: "/#evenementiel" },
+  { label: "À propos", href: "/#a-propos" },
 ];
 
 export function Navbar() {
@@ -36,7 +36,7 @@ export function Navbar() {
           </ul>
 
           <Link
-            href="#contact"
+            href="/#contact"
             className="rounded-pill bg-steel px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-ink"
           >
             Contact
