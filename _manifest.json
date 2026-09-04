@@ -1,0 +1,725 @@
+{
+  "cma-cgm": [
+    {
+      "src": "/images/projets/cma-cgm/01.webp",
+      "colonne": 1400,
+      "ligne": 1752,
+      "ratio": 1.1986,
+      "origine": "CMA_Heading to Safety_Kakemono EN Simul2.png"
+    },
+    {
+      "src": "/images/projets/cma-cgm/02.webp",
+      "colonne": 1400,
+      "ligne": 2968,
+      "ratio": 1.3359,
+      "origine": "CMA_Heading to Safety_Ecran_Ascenseur.png"
+    },
+    {
+      "src": "/images/projets/cma-cgm/03.webp",
+      "colonne": 1768,
+      "ligne": 2968,
+      "ratio": 1.687,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/cma-cgm/04.webp",
+      "colonne": 1752,
+      "ligne": 4064,
+      "ratio": 1.7381,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/cma-cgm/05.webp",
+      "colonne": 1080,
+      "ligne": 5120,
+      "ratio": 1.35,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/cma-cgm/06.webp",
+      "colonne": 1080,
+      "ligne": 5120,
+      "ratio": 1.35,
+      "origine": "CREA - HEADING TO SAFETY - SAC A DOS V2.png"
+    },
+    {
+      "src": "/images/projets/cma-cgm/07.webp",
+      "colonne": 1080,
+      "ligne": 5120,
+      "ratio": 1.35,
+      "origine": "CREA_HEADING TO SAFETY_POLO_HOMME_V2.png"
+    },
+    {
+      "src": "/images/projets/cma-cgm/08.webp",
+      "colonne": 3264,
+      "ligne": 5968,
+      "ratio": 1.279,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/cma-cgm/09.webp",
+      "colonne": 1072,
+      "ligne": 8752,
+      "ratio": 1.34,
+      "origine": "safety barriers 2.png"
+    },
+    {
+      "src": "/images/projets/cma-cgm/10.webp",
+      "colonne": 1072,
+      "ligne": 8752,
+      "ratio": 1.34,
+      "origine": "Leaflet Safety Barriers 2.png"
+    },
+    {
+      "src": "/images/projets/cma-cgm/11.webp",
+      "colonne": 1072,
+      "ligne": 8752,
+      "ratio": 1.34,
+      "origine": "Leaflet Safety Barriers.png"
+    },
+    {
+      "src": "/images/projets/cma-cgm/12.webp",
+      "colonne": 1080,
+      "ligne": 9784,
+      "ratio": 1.5,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/cma-cgm/13.webp",
+      "colonne": 1064,
+      "ligne": 9792,
+      "ratio": 1.4944,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/cma-cgm/14.webp",
+      "colonne": 1072,
+      "ligne": 9792,
+      "ratio": 1.5056,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/cma-cgm/15.webp",
+      "colonne": 1584,
+      "ligne": 10728,
+      "ratio": 1.65,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/cma-cgm/16.webp",
+      "colonne": 1584,
+      "ligne": 10728,
+      "ratio": 1.65,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/cma-cgm/17.webp",
+      "colonne": 1584,
+      "ligne": 11736,
+      "ratio": 1.6639,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/cma-cgm/18.webp",
+      "colonne": 1584,
+      "ligne": 11736,
+      "ratio": 1.6639,
+      "origine": "tuto.jpg"
+    }
+  ],
+  "bourbon": [
+    {
+      "src": "/images/projets/bourbon/01.webp",
+      "colonne": 1600,
+      "ligne": 1504,
+      "ratio": 1.1765,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/bourbon/02.webp",
+      "colonne": 1624,
+      "ligne": 1504,
+      "ratio": 1.1941,
+      "origine": "Décli_Poster.png"
+    },
+    {
+      "src": "/images/projets/bourbon/03.webp",
+      "colonne": 3280,
+      "ligne": 2912,
+      "ratio": 1.6667,
+      "origine": "Mockup_A4_Brochure.jpg"
+    },
+    {
+      "src": "/images/projets/bourbon/04.webp",
+      "colonne": 3280,
+      "ligne": 5096,
+      "ratio": 1.6532,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/bourbon/05.webp",
+      "colonne": 3280,
+      "ligne": 7128,
+      "ratio": 2.0197,
+      "origine": "maquette"
+    }
+  ],
+  "sharly-shaper": [
+    {
+      "src": "/images/projets/sharly-shaper/01.webp",
+      "colonne": 3272,
+      "ligne": 3872,
+      "ratio": 1.9758,
+      "origine": "maquette"
+    }
+  ],
+  "borealis": [
+    {
+      "src": "/images/projets/borealis/01.webp",
+      "colonne": 3272,
+      "ligne": 1280,
+      "ratio": 2.9638,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/borealis/02.webp",
+      "colonne": 1072,
+      "ligne": 2432,
+      "ratio": 1.4889,
+      "origine": "Prestige_22.jpg"
+    },
+    {
+      "src": "/images/projets/borealis/03.webp",
+      "colonne": 1080,
+      "ligne": 2432,
+      "ratio": 1.5,
+      "origine": "Prestige_21.jpg"
+    },
+    {
+      "src": "/images/projets/borealis/04.webp",
+      "colonne": 1080,
+      "ligne": 2432,
+      "ratio": 1.5,
+      "origine": "Variete9.jpg"
+    },
+    {
+      "src": "/images/projets/borealis/05.webp",
+      "colonne": 3264,
+      "ligne": 3200,
+      "ratio": 1.9245,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/borealis/06.webp",
+      "colonne": 1072,
+      "ligne": 4944,
+      "ratio": 1.5056,
+      "origine": "Origine6.jpg"
+    },
+    {
+      "src": "/images/projets/borealis/07.webp",
+      "colonne": 1080,
+      "ligne": 4944,
+      "ratio": 1.5169,
+      "origine": "Origine1.jpg"
+    },
+    {
+      "src": "/images/projets/borealis/08.webp",
+      "colonne": 1072,
+      "ligne": 4944,
+      "ratio": 1.5056,
+      "origine": "Variete16.jpg"
+    },
+    {
+      "src": "/images/projets/borealis/09.webp",
+      "colonne": 3264,
+      "ligne": 5704,
+      "ratio": 1.8296,
+      "origine": "maquette"
+    }
+  ],
+  "asics": [
+    {
+      "src": "/images/projets/asics/01.webp",
+      "colonne": 3264,
+      "ligne": 1472,
+      "ratio": 2.9565,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/asics/02.webp",
+      "colonne": 1608,
+      "ligne": 2624,
+      "ratio": 1.7788,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/asics/03.webp",
+      "colonne": 1608,
+      "ligne": 2624,
+      "ratio": 1.7788,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/asics/04.webp",
+      "colonne": 1608,
+      "ligne": 3576,
+      "ratio": 1.7788,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/asics/05.webp",
+      "colonne": 1608,
+      "ligne": 3576,
+      "ratio": 1.7788,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/asics/06.webp",
+      "colonne": 3264,
+      "ligne": 4584,
+      "ratio": 7.0345,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/asics/07.webp",
+      "colonne": 1056,
+      "ligne": 5144,
+      "ratio": 1.4194,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/asics/08.webp",
+      "colonne": 1056,
+      "ligne": 5144,
+      "ratio": 1.4194,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/asics/09.webp",
+      "colonne": 1056,
+      "ligne": 5144,
+      "ratio": 1.4194,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/asics/10.webp",
+      "colonne": 1608,
+      "ligne": 5936,
+      "ratio": 1.2968,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/asics/11.webp",
+      "colonne": 1608,
+      "ligne": 5936,
+      "ratio": 1.2968,
+      "origine": "maquette"
+    }
+  ],
+  "merea": [
+    {
+      "src": "/images/projets/merea/01.webp",
+      "colonne": 1104,
+      "ligne": 1400,
+      "ratio": 1.0147,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/merea/02.webp",
+      "colonne": 1280,
+      "ligne": 1400,
+      "ratio": 1.1765,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/merea/03.webp",
+      "colonne": 752,
+      "ligne": 1400,
+      "ratio": 0.7068,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/merea/04.webp",
+      "colonne": 640,
+      "ligne": 2536,
+      "ratio": 0.7767,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/merea/05.webp",
+      "colonne": 880,
+      "ligne": 2536,
+      "ratio": 1.068,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/merea/06.webp",
+      "colonne": 640,
+      "ligne": 2536,
+      "ratio": 0.7767,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/merea/07.webp",
+      "colonne": 880,
+      "ligne": 2536,
+      "ratio": 1.068,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/merea/08.webp",
+      "colonne": 3248,
+      "ligne": 3480,
+      "ratio": 1.8044,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/merea/09.webp",
+      "colonne": 1568,
+      "ligne": 5400,
+      "ratio": 0.3025,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/merea/10.webp",
+      "colonne": 1640,
+      "ligne": 5400,
+      "ratio": 0.3164,
+      "origine": "maquette"
+    }
+  ],
+  "parc-spirou": [
+    {
+      "src": "/images/projets/parc-spirou/01.webp",
+      "colonne": 880,
+      "ligne": 1376,
+      "ratio": 0.8594,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/parc-spirou/02.webp",
+      "colonne": 1296,
+      "ligne": 1376,
+      "ratio": 1.2656,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/parc-spirou/03.webp",
+      "colonne": 880,
+      "ligne": 1376,
+      "ratio": 0.8594,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/parc-spirou/04.webp",
+      "colonne": 696,
+      "ligne": 2496,
+      "ratio": 0.5649,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/parc-spirou/05.webp",
+      "colonne": 1008,
+      "ligne": 2504,
+      "ratio": 0.8182,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/parc-spirou/06.webp",
+      "colonne": 1456,
+      "ligne": 2496,
+      "ratio": 1.1818,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/parc-spirou/07.webp",
+      "colonne": 3264,
+      "ligne": 3800,
+      "ratio": 1.8545,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/parc-spirou/08.webp",
+      "colonne": 1584,
+      "ligne": 5608,
+      "ratio": 1.8333,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/parc-spirou/09.webp",
+      "colonne": 1584,
+      "ligne": 5608,
+      "ratio": 1.8505,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/parc-spirou/10.webp",
+      "colonne": 960,
+      "ligne": 6520,
+      "ratio": 0.7792,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/parc-spirou/11.webp",
+      "colonne": 1240,
+      "ligne": 6520,
+      "ratio": 1.0065,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/parc-spirou/12.webp",
+      "colonne": 944,
+      "ligne": 6520,
+      "ratio": 0.7662,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/parc-spirou/13.webp",
+      "colonne": 3264,
+      "ligne": 7800,
+      "ratio": 1.0909,
+      "origine": "maquette"
+    }
+  ],
+  "carmat": [
+    {
+      "src": "/images/projets/carmat/01.webp",
+      "colonne": 904,
+      "ligne": 1328,
+      "ratio": 0.4139,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/carmat/02.webp",
+      "colonne": 1416,
+      "ligne": 1336,
+      "ratio": 0.6531,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/carmat/03.webp",
+      "colonne": 816,
+      "ligne": 1336,
+      "ratio": 0.3764,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/carmat/04.webp",
+      "colonne": 1056,
+      "ligne": 3608,
+      "ratio": 1.3333,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/carmat/05.webp",
+      "colonne": 1056,
+      "ligne": 3608,
+      "ratio": 1.3333,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/carmat/06.webp",
+      "colonne": 1056,
+      "ligne": 3608,
+      "ratio": 1.3333,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/carmat/07.webp",
+      "colonne": 1616,
+      "ligne": 4504,
+      "ratio": 1.6423,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/carmat/08.webp",
+      "colonne": 1616,
+      "ligne": 4504,
+      "ratio": 1.6423,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/carmat/09.webp",
+      "colonne": 1608,
+      "ligne": 5592,
+      "ratio": 1.3767,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/carmat/10.webp",
+      "colonne": 1624,
+      "ligne": 5592,
+      "ratio": 1.3904,
+      "origine": "maquette"
+    }
+  ],
+  "rosajou": [
+    {
+      "src": "/images/projets/rosajou/01.webp",
+      "colonne": 3240,
+      "ligne": 1616,
+      "ratio": 2.9137,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/rosajou/02.webp",
+      "colonne": 1192,
+      "ligne": 2776,
+      "ratio": 0.903,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/rosajou/03.webp",
+      "colonne": 1072,
+      "ligne": 2776,
+      "ratio": 0.8072,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/rosajou/04.webp",
+      "colonne": 1080,
+      "ligne": 4152,
+      "ratio": 1.4362,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/rosajou/05.webp",
+      "colonne": 1072,
+      "ligne": 4152,
+      "ratio": 1.4255,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/rosajou/06.webp",
+      "colonne": 1072,
+      "ligne": 4152,
+      "ratio": 1.4255,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/rosajou/07.webp",
+      "colonne": 1424,
+      "ligne": 4952,
+      "ratio": 1.3284,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/rosajou/08.webp",
+      "colonne": 1072,
+      "ligne": 4952,
+      "ratio": 1,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/rosajou/09.webp",
+      "colonne": 720,
+      "ligne": 4952,
+      "ratio": 0.6716,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/rosajou/10.webp",
+      "colonne": 864,
+      "ligne": 6072,
+      "ratio": 1.0909,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/rosajou/11.webp",
+      "colonne": 1408,
+      "ligne": 6072,
+      "ratio": 1.7778,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/rosajou/12.webp",
+      "colonne": 936,
+      "ligne": 6072,
+      "ratio": 1.1818,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/rosajou/13.webp",
+      "colonne": 1616,
+      "ligne": 6912,
+      "ratio": 1.4963,
+      "origine": "maquette"
+    }
+  ],
+  "peeka": [
+    {
+      "src": "/images/projets/peeka/01.webp",
+      "colonne": 3272,
+      "ligne": 3248,
+      "ratio": 1.786,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/peeka/02.webp",
+      "colonne": 3272,
+      "ligne": 5128,
+      "ratio": 1.7783,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/peeka/03.webp",
+      "colonne": 3272,
+      "ligne": 7016,
+      "ratio": 1.7783,
+      "origine": "maquette"
+    }
+  ],
+  "espace-bocaud-jacou": [
+    {
+      "src": "/images/projets/espace-bocaud-jacou/01.webp",
+      "colonne": 1536,
+      "ligne": 1480,
+      "ratio": 1.1707,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/espace-bocaud-jacou/02.webp",
+      "colonne": 1536,
+      "ligne": 1480,
+      "ratio": 1.1707,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/espace-bocaud-jacou/03.webp",
+      "colonne": 3264,
+      "ligne": 2840,
+      "ratio": 2.2921,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/espace-bocaud-jacou/04.webp",
+      "colonne": 3264,
+      "ligne": 4312,
+      "ratio": 3.3171,
+      "origine": "maquette"
+    },
+    {
+      "src": "/images/projets/espace-bocaud-jacou/05.webp",
+      "colonne": 3264,
+      "ligne": 5344,
+      "ratio": 3.3171,
+      "origine": "maquette"
+    }
+  ],
+  "__cartes": [
+    "/images/cartes/01.webp",
+    "/images/cartes/02.webp",
+    "/images/cartes/03.webp",
+    "/images/cartes/04.webp",
+    "/images/cartes/05.webp",
+    "/images/cartes/06.webp",
+    "/images/cartes/07.webp",
+    "/images/cartes/08.webp",
+    "/images/cartes/09.webp",
+    "/images/cartes/10.webp",
+    "/images/cartes/11.webp",
+    "/images/cartes/12.webp",
+    "/images/cartes/13.webp"
+  ]
+}
