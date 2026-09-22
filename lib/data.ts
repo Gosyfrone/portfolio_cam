@@ -3,6 +3,8 @@ export type Projet = {
   nom: string;
   tags: string[];
   image: string | null;
+  /** false : pas encore de page projet (lien désactivé). */
+  aPage?: boolean;
 };
 
 export type Evenement = {
@@ -37,39 +39,87 @@ export const servicesEvenementiel = [
   "Communication",
 ];
 
+/** Ordre de la page Réalisations. */
 export const projets: Projet[] = [
   {
     slug: "solem",
     nom: "SOLEM",
-    tags: ["Print", "Digital", "Événementiel"],
-    image: "/images/projets/solem.png",
+    tags: ["Direction artistique", "Identité visuelle", "Événementiel"],
+    image: "/images/cartes/01.webp",
+  },
+  {
+    slug: "cma-cgm",
+    nom: "CMA CGM",
+    tags: ["Identité visuelle", "Print", "Digital"],
+    image: "/images/cartes/02.webp",
   },
   {
     slug: "bourbon",
     nom: "BOURBON",
-    tags: ["Print", "Digital", "Identité visuelle"],
-    image: "/images/projets/bourbon.png",
+    tags: ["Identité visuelle", "Print", "Digital"],
+    image: "/images/cartes/03.webp",
+  },
+  {
+    slug: "sharly-shaper",
+    nom: "SHARLY SHAPER",
+    tags: ["Community", "Identité visuelle"],
+    image: "/images/cartes/04.webp",
+  },
+  {
+    slug: "borealis",
+    nom: "BOREALIS",
+    tags: ["Direction artistique", "Identité visuelle", "Print"],
+    image: "/images/cartes/05.webp",
   },
   {
     slug: "asics",
     nom: "ASICS",
-    tags: ["Print", "Direction artistique", "Design graphique"],
-    image: "/images/projets/asics.png",
+    tags: ["Direction artistique", "Identité visuelle", "Print"],
+    image: "/images/cartes/06.webp",
   },
-  // Placeholders — visuels à fournir
-  { slug: "cma-cgm", nom: "CMA CGM", tags: ["Print", "Digital"], image: null },
-  { slug: "carmat", nom: "CARMAT", tags: ["Identité visuelle"], image: null },
-  { slug: "rosajou", nom: "ROSAJOU", tags: ["Branding", "Print"], image: null },
-  { slug: "borealis", nom: "BOREALIS", tags: ["Branding"], image: null },
-  { slug: "peeka", nom: "PEEKA", tags: ["Design graphique"], image: null },
-  { slug: "spirou", nom: "SPIROU", tags: ["Print"], image: null },
-  { slug: "merea", nom: "MEREA", tags: ["Identité visuelle"], image: null },
-  { slug: "bocaud", nom: "BOCAUD", tags: ["Print"], image: null },
   {
-    slug: "sharly-shaper",
-    nom: "SHARLY SHAPER",
-    tags: ["Branding"],
+    slug: "merea",
+    nom: "MEREA",
+    tags: ["Direction artistique", "Identité visuelle"],
+    image: "/images/cartes/07.webp",
+  },
+  {
+    slug: "parc-spirou",
+    nom: "PARC SPIROU",
+    tags: ["Identité visuelle", "Print", "Digital"],
+    image: "/images/cartes/08.webp",
+  },
+  {
+    slug: "carmat",
+    nom: "CARMAT",
+    tags: ["Identité visuelle", "Print", "Digital"],
+    image: "/images/cartes/09.webp",
+  },
+  {
+    slug: "rosajou",
+    nom: "ROSAJOU",
+    tags: ["Direction artistique", "Identité visuelle", "Print"],
+    image: "/images/cartes/10.webp",
+  },
+  {
+    slug: "domaine-de-la-gineste",
+    nom: "DOMAINE DE LA GINESTE",
+    tags: ["Vidéos", "Photos", "Print"],
     image: null,
+    // Ni maquette ni visuels fournis : carte sans page projet.
+    aPage: false,
+  },
+  {
+    slug: "peeka",
+    nom: "PEEKA",
+    tags: ["Identité visuelle", "Direction artistique"],
+    image: "/images/cartes/12.webp",
+  },
+  {
+    slug: "espace-bocaud-jacou",
+    nom: "ESPACE BOCAUD JACOU",
+    tags: ["Identité visuelle", "Design graphique", "Print"],
+    image: "/images/cartes/13.webp",
   },
 ];
 
@@ -140,6 +190,20 @@ export const salonsInternationaux: Evenement[] = [
     editions: "Édition 2026",
     image: "/images/evenements/ia-show-las-vegas.png",
   },
+];
+
+/** Logiciels (bandeau orange de la page Réalisations). */
+export const outils = [
+  "Photoshop",
+  "Illustrator",
+  "Indesign",
+  "Figma",
+  "After Effect",
+  "Première Pro",
+  "Lightroom",
+  "WordPress",
+  "Midjourney",
+  "Gigapixel",
 ];
 
 export const clients = [

@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const liens = [
-  { label: "Projets", href: "#projets" },
-  { label: "Événementiel", href: "#evenementiel" },
-  { label: "À propos", href: "#a-propos" },
+  { label: "Projets", href: "/projets" },
+  { label: "Événementiel", href: "/#evenementiel" },
+  { label: "À propos", href: "/#a-propos" },
 ];
 
 export function Navbar() {

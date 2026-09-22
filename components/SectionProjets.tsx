@@ -33,9 +33,11 @@ export function SectionProjets() {
         speed={26}
         className="mt-10 pl-6 md:pl-16 2xl:pl-32"
       >
-        {projets.map((projet) => (
-          <CarteProjet key={projet.slug} projet={projet} />
-        ))}
+        {projets
+          .filter((projet) => projet.aPage !== false)
+          .map((projet) => (
+            <CarteProjet key={projet.slug} projet={projet} />
+          ))}
       </Rail>
 
       <div className="gutter mt-8 flex justify-end">

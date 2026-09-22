@@ -25,13 +25,18 @@ const PASTILLES = {
   },
 };
 
+// Blocs de la maquette remplacés par un rendu spécifique (vidéos, etc.).
+const EXCLUS = {
+  "sharly-shaper": ["/images/projets/sharly-shaper/03.webp"],
+};
+
 const manifeste = JSON.parse(fs.readFileSync("_manifest.json", "utf8"));
 const sortie = {};
 
 for (const [slug, visuels] of Object.entries(manifeste)) {
   if (slug.startsWith("__")) continue;
   const rangees = [];
-  for (const visuel of visuels) {
+  for (const visuel of visuels.filter((v) => !EXCLUS[slug]?.includes(v.src))) {
     const derniere = rangees.at(-1);
     if (derniere && Math.abs(derniere.ligne - visuel.ligne) <= TOLERANCE) {
       derniere.visuels.push(visuel);
@@ -46,9 +51,14 @@ for (const [slug, visuels] of Object.entries(manifeste)) {
     const pastille = PASTILLES[slug]?.[rangee.ligne];
     return {
       ...(pastille ?? {}),
+      ...(rangee.visuels.some((v) => v.texte) ? { texte: true } : {}),
       // Part de la largeur utile occupée par la rangée (les rangées partielles
-      // du Figma restent partielles).
-      largeur: Math.min(1, Math.round((totale / LARGEUR_CONTENU) * 1000) / 1000),
+      // du Figma restent partielles ; au-delà de 95 %, c'est une rangée pleine
+      // largeur aux arrondis de découpe près).
+      largeur:
+        totale / LARGEUR_CONTENU >= 0.95
+          ? 1
+          : Math.round((totale / LARGEUR_CONTENU) * 1000) / 1000,
       visuels: rangee.visuels.map((v) => ({
         src: v.src,
         ratio: v.ratio,
@@ -73,6 +83,8 @@ export type Rangee = {
   /** Pastille de section affichée au-dessus de la rangée, si le Figma en a une. */
   label?: string;
   ton?: "encre" | "bleu" | "brique" | "sauge";
+  /** Le visuel partage sa rangée avec le texte « blocTexte » du projet. */
+  texte?: boolean;
   /** Part de la largeur utile occupée par la rangée (1 = pleine largeur). */
   largeur: number;
   visuels: Visuel[];

@@ -74,3 +74,27 @@
     scroll-behavior: auto;
   }
 }
+
+/* Colonnes d'images en défilement vertical (hero Réalisations) */
+@keyframes marquee-y {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+.marquee-y {
+  animation: marquee-y var(--marquee-duration, 60s) linear infinite;
+}
+
+.marquee-y[data-reverse="true"] {
+  animation-direction: reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-y {
+    animation: none;
+  }
+}

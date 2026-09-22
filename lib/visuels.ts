@@ -13,6 +13,8 @@ export type Rangee = {
   /** Pastille de section affichée au-dessus de la rangée, si le Figma en a une. */
   label?: string;
   ton?: "encre" | "bleu" | "brique" | "sauge";
+  /** Le visuel partage sa rangée avec le texte « blocTexte » du projet. */
+  texte?: boolean;
   /** Part de la largeur utile occupée par la rangée (1 = pleine largeur). */
   largeur: number;
   visuels: Visuel[];
@@ -23,55 +25,65 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
     {
       "label": "Campagne Heading to safety",
       "ton": "encre",
-      "largeur": 0.429,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/cma-cgm/01.webp",
           "ratio": 1.1986,
-          "part": 1
+          "part": 0.443
+        },
+        {
+          "src": "/images/projets/cma-cgm/02.webp",
+          "ratio": 1.5086,
+          "part": 0.557
         }
       ]
     },
     {
-      "largeur": 0.971,
+      "largeur": 1,
       "visuels": [
         {
-          "src": "/images/projets/cma-cgm/02.webp",
+          "src": "/images/projets/cma-cgm/03.webp",
           "ratio": 1.3359,
           "part": 0.442
         },
         {
-          "src": "/images/projets/cma-cgm/03.webp",
+          "src": "/images/projets/cma-cgm/04.webp",
           "ratio": 1.687,
           "part": 0.558
         }
       ]
     },
     {
-      "largeur": 0.537,
+      "largeur": 1,
       "visuels": [
         {
-          "src": "/images/projets/cma-cgm/04.webp",
+          "src": "/images/projets/cma-cgm/05.webp",
+          "ratio": 1.3861,
+          "part": 0.444
+        },
+        {
+          "src": "/images/projets/cma-cgm/06.webp",
           "ratio": 1.7381,
-          "part": 1
+          "part": 0.556
         }
       ]
     },
     {
-      "largeur": 0.993,
+      "largeur": 1,
       "visuels": [
         {
-          "src": "/images/projets/cma-cgm/05.webp",
-          "ratio": 1.35,
-          "part": 0.333
-        },
-        {
-          "src": "/images/projets/cma-cgm/06.webp",
-          "ratio": 1.35,
-          "part": 0.333
-        },
-        {
           "src": "/images/projets/cma-cgm/07.webp",
+          "ratio": 1.35,
+          "part": 0.333
+        },
+        {
+          "src": "/images/projets/cma-cgm/08.webp",
+          "ratio": 1.35,
+          "part": 0.333
+        },
+        {
+          "src": "/images/projets/cma-cgm/09.webp",
           "ratio": 1.35,
           "part": 0.333
         }
@@ -81,7 +93,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       "largeur": 1,
       "visuels": [
         {
-          "src": "/images/projets/cma-cgm/08.webp",
+          "src": "/images/projets/cma-cgm/10.webp",
           "ratio": 1.279,
           "part": 1
         }
@@ -90,20 +102,20 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
     {
       "label": "Leaflet Safety Barriers",
       "ton": "brique",
-      "largeur": 0.985,
+      "largeur": 1,
       "visuels": [
         {
-          "src": "/images/projets/cma-cgm/09.webp",
-          "ratio": 1.34,
-          "part": 0.333
-        },
-        {
-          "src": "/images/projets/cma-cgm/10.webp",
-          "ratio": 1.34,
-          "part": 0.333
-        },
-        {
           "src": "/images/projets/cma-cgm/11.webp",
+          "ratio": 1.34,
+          "part": 0.333
+        },
+        {
+          "src": "/images/projets/cma-cgm/12.webp",
+          "ratio": 1.34,
+          "part": 0.333
+        },
+        {
+          "src": "/images/projets/cma-cgm/13.webp",
           "ratio": 1.34,
           "part": 0.333
         }
@@ -112,20 +124,20 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
     {
       "label": "Poster Risques Psycho-Sociaux",
       "ton": "encre",
-      "largeur": 0.985,
+      "largeur": 1,
       "visuels": [
         {
-          "src": "/images/projets/cma-cgm/12.webp",
+          "src": "/images/projets/cma-cgm/14.webp",
           "ratio": 1.5,
           "part": 0.336
         },
         {
-          "src": "/images/projets/cma-cgm/13.webp",
+          "src": "/images/projets/cma-cgm/15.webp",
           "ratio": 1.4944,
           "part": 0.331
         },
         {
-          "src": "/images/projets/cma-cgm/14.webp",
+          "src": "/images/projets/cma-cgm/16.webp",
           "ratio": 1.5056,
           "part": 0.333
         }
@@ -134,30 +146,30 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
     {
       "label": "Livre de recette",
       "ton": "sauge",
-      "largeur": 0.971,
+      "largeur": 1,
       "visuels": [
         {
-          "src": "/images/projets/cma-cgm/15.webp",
+          "src": "/images/projets/cma-cgm/17.webp",
           "ratio": 1.65,
           "part": 0.5
         },
         {
-          "src": "/images/projets/cma-cgm/16.webp",
+          "src": "/images/projets/cma-cgm/18.webp",
           "ratio": 1.65,
           "part": 0.5
         }
       ]
     },
     {
-      "largeur": 0.971,
+      "largeur": 1,
       "visuels": [
         {
-          "src": "/images/projets/cma-cgm/17.webp",
+          "src": "/images/projets/cma-cgm/19.webp",
           "ratio": 1.6639,
           "part": 0.5
         },
         {
-          "src": "/images/projets/cma-cgm/18.webp",
+          "src": "/images/projets/cma-cgm/20.webp",
           "ratio": 1.6639,
           "part": 0.5
         }
@@ -168,7 +180,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
     {
       "label": "Campagne Horizon",
       "ton": "bleu",
-      "largeur": 0.988,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/bourbon/01.webp",
@@ -221,7 +233,18 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       "visuels": [
         {
           "src": "/images/projets/sharly-shaper/01.webp",
-          "ratio": 1.9758,
+          "ratio": 2.3768,
+          "part": 1
+        }
+      ]
+    },
+    {
+      "texte": true,
+      "largeur": 0.48,
+      "visuels": [
+        {
+          "src": "/images/projets/sharly-shaper/02.webp",
+          "ratio": 1.4682,
           "part": 1
         }
       ]
@@ -239,7 +262,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       ]
     },
     {
-      "largeur": 0.99,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/borealis/02.webp",
@@ -269,7 +292,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       ]
     },
     {
-      "largeur": 0.988,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/borealis/06.webp",
@@ -305,36 +328,11 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       "visuels": [
         {
           "src": "/images/projets/asics/01.webp",
-          "ratio": 2.9565,
-          "part": 1
-        }
-      ]
-    },
-    {
-      "largeur": 0.985,
-      "visuels": [
+          "ratio": 1.7788,
+          "part": 0.5
+        },
         {
           "src": "/images/projets/asics/02.webp",
-          "ratio": 1.7788,
-          "part": 0.5
-        },
-        {
-          "src": "/images/projets/asics/03.webp",
-          "ratio": 1.7788,
-          "part": 0.5
-        }
-      ]
-    },
-    {
-      "largeur": 0.985,
-      "visuels": [
-        {
-          "src": "/images/projets/asics/04.webp",
-          "ratio": 1.7788,
-          "part": 0.5
-        },
-        {
-          "src": "/images/projets/asics/05.webp",
           "ratio": 1.7788,
           "part": 0.5
         }
@@ -344,42 +342,47 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       "largeur": 1,
       "visuels": [
         {
-          "src": "/images/projets/asics/06.webp",
-          "ratio": 7.0345,
-          "part": 1
+          "src": "/images/projets/asics/03.webp",
+          "ratio": 1.7788,
+          "part": 0.5
+        },
+        {
+          "src": "/images/projets/asics/04.webp",
+          "ratio": 1.7788,
+          "part": 0.5
         }
       ]
     },
     {
-      "largeur": 0.971,
+      "largeur": 1,
       "visuels": [
+        {
+          "src": "/images/projets/asics/05.webp",
+          "ratio": 1.4194,
+          "part": 0.333
+        },
+        {
+          "src": "/images/projets/asics/06.webp",
+          "ratio": 1.4194,
+          "part": 0.333
+        },
         {
           "src": "/images/projets/asics/07.webp",
           "ratio": 1.4194,
           "part": 0.333
-        },
-        {
-          "src": "/images/projets/asics/08.webp",
-          "ratio": 1.4194,
-          "part": 0.333
-        },
-        {
-          "src": "/images/projets/asics/09.webp",
-          "ratio": 1.4194,
-          "part": 0.333
         }
       ]
     },
     {
-      "largeur": 0.985,
+      "largeur": 1,
       "visuels": [
         {
-          "src": "/images/projets/asics/10.webp",
+          "src": "/images/projets/asics/08.webp",
           "ratio": 1.2968,
           "part": 0.5
         },
         {
-          "src": "/images/projets/asics/11.webp",
+          "src": "/images/projets/asics/09.webp",
           "ratio": 1.2968,
           "part": 0.5
         }
@@ -388,7 +391,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
   ],
   "merea": [
     {
-      "largeur": 0.961,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/merea/01.webp",
@@ -433,7 +436,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       ]
     },
     {
-      "largeur": 0.995,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/merea/08.webp",
@@ -443,7 +446,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       ]
     },
     {
-      "largeur": 0.983,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/merea/09.webp",
@@ -480,7 +483,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       ]
     },
     {
-      "largeur": 0.968,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/parc-spirou/04.webp",
@@ -489,13 +492,13 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
         },
         {
           "src": "/images/projets/parc-spirou/05.webp",
-          "ratio": 0.8182,
-          "part": 0.319
+          "ratio": 1.1818,
+          "part": 0.461
         },
         {
           "src": "/images/projets/parc-spirou/06.webp",
-          "ratio": 1.1818,
-          "part": 0.461
+          "ratio": 0.8182,
+          "part": 0.319
         }
       ]
     },
@@ -510,7 +513,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       ]
     },
     {
-      "largeur": 0.971,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/parc-spirou/08.webp",
@@ -525,7 +528,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       ]
     },
     {
-      "largeur": 0.963,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/parc-spirou/10.webp",
@@ -557,7 +560,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
   ],
   "carmat": [
     {
-      "largeur": 0.961,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/carmat/01.webp",
@@ -577,7 +580,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       ]
     },
     {
-      "largeur": 0.971,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/carmat/04.webp",
@@ -597,7 +600,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       ]
     },
     {
-      "largeur": 0.99,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/carmat/07.webp",
@@ -612,7 +615,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       ]
     },
     {
-      "largeur": 0.99,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/carmat/09.webp",
@@ -625,11 +628,21 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
           "part": 0.502
         }
       ]
+    },
+    {
+      "largeur": 1,
+      "visuels": [
+        {
+          "src": "/images/projets/carmat/11.webp",
+          "ratio": 2.0605,
+          "part": 1
+        }
+      ]
     }
   ],
   "rosajou": [
     {
-      "largeur": 0.993,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/rosajou/01.webp",
@@ -639,87 +652,97 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       ]
     },
     {
-      "largeur": 0.694,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/rosajou/02.webp",
-          "ratio": 0.903,
-          "part": 0.527
+          "ratio": 0.7047,
+          "part": 0.293
         },
         {
           "src": "/images/projets/rosajou/03.webp",
+          "ratio": 0.903,
+          "part": 0.372
+        },
+        {
+          "src": "/images/projets/rosajou/04.webp",
           "ratio": 0.8072,
-          "part": 0.473
+          "part": 0.335
         }
       ]
     },
     {
-      "largeur": 0.988,
+      "largeur": 1,
       "visuels": [
         {
-          "src": "/images/projets/rosajou/04.webp",
+          "src": "/images/projets/rosajou/05.webp",
           "ratio": 1.4362,
           "part": 0.335
-        },
-        {
-          "src": "/images/projets/rosajou/05.webp",
-          "ratio": 1.4255,
-          "part": 0.333
         },
         {
           "src": "/images/projets/rosajou/06.webp",
           "ratio": 1.4255,
           "part": 0.333
+        },
+        {
+          "src": "/images/projets/rosajou/07.webp",
+          "ratio": 1.4255,
+          "part": 0.333
         }
       ]
     },
     {
-      "largeur": 0.985,
+      "largeur": 1,
       "visuels": [
         {
-          "src": "/images/projets/rosajou/07.webp",
+          "src": "/images/projets/rosajou/08.webp",
           "ratio": 1.3284,
           "part": 0.443
         },
         {
-          "src": "/images/projets/rosajou/08.webp",
+          "src": "/images/projets/rosajou/09.webp",
           "ratio": 1,
           "part": 0.333
         },
         {
-          "src": "/images/projets/rosajou/09.webp",
+          "src": "/images/projets/rosajou/10.webp",
           "ratio": 0.6716,
           "part": 0.224
         }
       ]
     },
     {
-      "largeur": 0.983,
+      "largeur": 1,
       "visuels": [
         {
-          "src": "/images/projets/rosajou/10.webp",
+          "src": "/images/projets/rosajou/11.webp",
           "ratio": 1.0909,
           "part": 0.269
         },
         {
-          "src": "/images/projets/rosajou/11.webp",
+          "src": "/images/projets/rosajou/12.webp",
           "ratio": 1.7778,
           "part": 0.439
         },
         {
-          "src": "/images/projets/rosajou/12.webp",
+          "src": "/images/projets/rosajou/13.webp",
           "ratio": 1.1818,
           "part": 0.292
         }
       ]
     },
     {
-      "largeur": 0.495,
+      "largeur": 1,
       "visuels": [
         {
-          "src": "/images/projets/rosajou/13.webp",
+          "src": "/images/projets/rosajou/14.webp",
+          "ratio": 1.5005,
+          "part": 0.501
+        },
+        {
+          "src": "/images/projets/rosajou/15.webp",
           "ratio": 1.4963,
-          "part": 1
+          "part": 0.499
         }
       ]
     }
@@ -730,7 +753,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       "visuels": [
         {
           "src": "/images/projets/peeka/01.webp",
-          "ratio": 1.786,
+          "ratio": 1.7792,
           "part": 1
         }
       ]
@@ -740,7 +763,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       "visuels": [
         {
           "src": "/images/projets/peeka/02.webp",
-          "ratio": 1.7783,
+          "ratio": 1.786,
           "part": 1
         }
       ]
@@ -750,6 +773,16 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       "visuels": [
         {
           "src": "/images/projets/peeka/03.webp",
+          "ratio": 1.7783,
+          "part": 1
+        }
+      ]
+    },
+    {
+      "largeur": 1,
+      "visuels": [
+        {
+          "src": "/images/projets/peeka/04.webp",
           "ratio": 1.7783,
           "part": 1
         }

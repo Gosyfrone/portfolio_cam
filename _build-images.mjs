@@ -5,20 +5,48 @@ import { blocs, signature, distance, SCREENS, RES } from './_pipeline.mjs';
 
 /** Écran source → slug de projet. */
 const PROJETS = [
-  ['SOLEM', null, null],
   ['CMA CGM', 'CMA CGM', 'cma-cgm'],
   ['BOURBON', 'BOURBON', 'bourbon'],
   ['SHARLY SHAPER', 'SHARLY SHAPER', 'sharly-shaper'],
   ['BOREALIS', 'BOREALIS', 'borealis'],
-  ['ASCIS', null, 'asics'],
-  ['merea', null, 'merea'],
-  ['SPIROU', null, 'parc-spirou'],
-  ['CARMAT', null, 'carmat'],
-  ['ROSAJOU', null, 'rosajou'],
-  ['DOMAINE', null, null],
-  ['PEEKA', null, 'peeka'],
-  ['BOCAUD', null, 'espace-bocaud-jacou'],
+  ['ASCIS', 'ASICS', 'asics'],
+  ['merea', 'MEREA', 'merea'],
+  ['SPIROU', 'PARC SPIROU', 'parc-spirou'],
+  ['CARMAT', 'CARMAT', 'carmat'],
+  ['ROSAJOU', 'ROSAJOU', 'rosajou'],
+  ['PEEKA', 'PEEKA', 'peeka'],
+  ['BOCAUD', 'ESPACE BOCAUD  JACOU', 'espace-bocaud-jacou'],
 ];
+
+/**
+ * Blocs que le découpage automatique ne sait pas isoler (fond proche du
+ * crème, bloc accolé à un paragraphe) : relevés à la main sur la maquette @2x.
+ * `texte` : le paragraphe voisin est rendu en HTML à côté du visuel.
+ */
+const MANUELS = {
+  'sharly-shaper': [
+    { left: 280, top: 1329, width: 3280, height: 1380 },
+    { left: 280, top: 2756, width: 1568, height: 1068, texte: true },
+  ],
+  peeka: [{ left: 288, top: 1355, width: 3272, height: 1839 }],
+  // Blocs sur fond blanc, trop proches du crème pour le seuil automatique
+  // (boîtes précisées avec _box.mjs).
+  'cma-cgm': [
+    { left: 1763, top: 1752, width: 1762, height: 1168 },
+    { left: 318, top: 4064, width: 1400, height: 1010 },
+  ],
+  rosajou: [
+    { left: 273, top: 2776, width: 938, height: 1331 },
+    { left: 277, top: 6912, width: 1622, height: 1081 },
+  ],
+  carmat: [{ left: 286, top: 6860, width: 3268, height: 1586 }],
+};
+
+/** Un bloc uni (zone grise laissée vide dans le Figma) n'est pas un visuel. */
+async function estVide(buffer) {
+  const { channels } = await sharp(buffer).stats();
+  return channels.slice(0, 3).every((c) => c.stdev < 3);
+}
 
 const DEST = 'public/images/projets';
 const manifest = {};
@@ -40,7 +68,8 @@ for (const [ecran, dossier, slug] of PROJETS) {
   const src = path.join(SCREENS, `${ecran}.png`);
   if (!fs.existsSync(src)) { console.log(`⚠ pas de maquette pour ${slug}`); continue; }
 
-  const boxes = await blocs(src);
+  const boxes = [...(MANUELS[slug] ?? []), ...(await blocs(src))]
+    .sort((a, b) => a.top - b.top || a.left - b.left);
   const fichiers = dossier ? ressources(path.join(RES, dossier)) : [];
   const sigsRes = await Promise.all(fichiers.map(signature));
 
@@ -48,14 +77,15 @@ for (const [ecran, dossier, slug] of PROJETS) {
   fs.rmSync(dir, { recursive: true, force: true });
   fs.mkdirSync(dir, { recursive: true });
 
-  const items = [];
-  let i = 0;
+  // 1er passage : découpe des blocs et meilleur candidat HD de chacun.
+  const blocsProjet = [];
   for (const box of boxes) {
-    const nom = `${String(++i).padStart(2, '0')}.webp`;
-    const crop = await sharp(src).extract(box).png().toBuffer();
+    const { texte, ...zone } = box;
+    const crop = await sharp(src).extract(zone).png().toBuffer();
+    if (await estVide(crop)) continue;
 
     // Un visuel haute définition existe-t-il dans RESSOURCES ?
-    let origine = null;
+    let candidat = null;
     if (fichiers.length) {
       const sig = await signature(crop);
       let best = Infinity, bestIdx = -1;
@@ -68,9 +98,27 @@ for (const [ecran, dossier, slug] of PROJETS) {
         // sinon object-cover recadrerait le mockup autrement que dans la maquette.
         const m = await sharp(fichiers[bestIdx]).metadata();
         const ecart = Math.abs(m.width / m.height - box.width / box.height) / (box.width / box.height);
-        if (ecart < 0.12) origine = { fichier: fichiers[bestIdx], score: Math.round(best) };
+        if (ecart < 0.12) candidat = { fichier: fichiers[bestIdx], score: best };
       }
     }
+    blocsProjet.push({ box, texte, crop, candidat });
+  }
+
+  // Un fichier HD ne sert qu'une fois : en cas de doublon, le bloc le plus
+  // ressemblant le garde, les autres restent en découpe de maquette.
+  const meilleurs = {};
+  for (const b of blocsProjet) {
+    if (!b.candidat) continue;
+    const f = b.candidat.fichier;
+    if (!meilleurs[f] || b.candidat.score < meilleurs[f].candidat.score) meilleurs[f] = b;
+  }
+
+  const items = [];
+  let i = 0;
+  for (const b of blocsProjet) {
+    const { box, texte, crop } = b;
+    const origine = b.candidat && meilleurs[b.candidat.fichier] === b ? b.candidat : null;
+    const nom = `${String(++i).padStart(2, '0')}.webp`;
 
     const entree = await sharp(origine ? origine.fichier : crop)
       .resize({ width: 1800, withoutEnlargement: true })
@@ -84,6 +132,7 @@ for (const [ecran, dossier, slug] of PROJETS) {
       colonne: box.width, ligne: box.top,
       ratio: +(box.width / box.height).toFixed(4),
       origine: origine ? path.basename(origine.fichier) : 'maquette',
+      ...(texte ? { texte: true } : {}),
     });
   }
   manifest[slug] = items;

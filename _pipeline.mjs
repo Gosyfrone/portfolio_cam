@@ -67,9 +67,9 @@ async function blocs(src, { minW = 400, minH = 300 } = {}) {
   return out;
 }
 
-/** Signature perceptuelle 12×12 pour rapprocher un bloc d'un fichier source. */
+/** Signature perceptuelle 24×24 pour rapprocher un bloc d'un fichier source. */
 async function signature(input) {
-  const { data } = await sharp(input).resize(12, 12, { fit: 'fill' }).removeAlpha()
+  const { data } = await sharp(input).resize(24, 24, { fit: "fill" }).removeAlpha()
     .raw().toBuffer({ resolveWithObject: true });
   return data;
 }
