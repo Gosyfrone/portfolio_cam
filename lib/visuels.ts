@@ -411,7 +411,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
       ]
     },
     {
-      "largeur": 0.931,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/merea/04.webp",
@@ -463,7 +463,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
   ],
   "parc-spirou": [
     {
-      "largeur": 0.936,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/parc-spirou/01.webp",
@@ -791,7 +791,7 @@ export const visuelsParProjet: Record<string, Rangee[]> = {
   ],
   "espace-bocaud-jacou": [
     {
-      "largeur": 0.941,
+      "largeur": 1,
       "visuels": [
         {
           "src": "/images/projets/espace-bocaud-jacou/01.webp",

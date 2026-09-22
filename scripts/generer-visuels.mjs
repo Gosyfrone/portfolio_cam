@@ -10,6 +10,7 @@ import fs from "fs";
 
 const LARGEUR_CONTENU = 3264; // largeur utile de la maquette @2x (3840 - 2×288)
 const TOLERANCE = 24; // deux visuels à moins de 24 px sont sur la même rangée
+const GOUTTIERE = 48; // écart entre deux visuels d'une même rangée, @2x
 
 // Pastilles de section relevées sur les maquettes, indexées par `ligne`.
 const PASTILLES = {
@@ -48,6 +49,11 @@ for (const [slug, visuels] of Object.entries(manifeste)) {
   sortie[slug] = rangees.map((rangee) => {
     const largeurs = rangee.visuels.map((v) => v.colonne);
     const totale = largeurs.reduce((a, b) => a + b, 0);
+    // Ce que la rangée occupe réellement dans la maquette : les visuels plus
+    // les gouttières qui les séparent. Sommer les seules largeurs sous-estime
+    // une rangée de n visuels de (n − 1) gouttières, assez pour faire passer
+    // une rangée pleine largeur sous le seuil.
+    const occupee = totale + (rangee.visuels.length - 1) * GOUTTIERE;
     const pastille = PASTILLES[slug]?.[rangee.ligne];
     return {
       ...(pastille ?? {}),
@@ -56,9 +62,9 @@ for (const [slug, visuels] of Object.entries(manifeste)) {
       // du Figma restent partielles ; au-delà de 95 %, c'est une rangée pleine
       // largeur aux arrondis de découpe près).
       largeur:
-        totale / LARGEUR_CONTENU >= 0.95
+        occupee / LARGEUR_CONTENU >= 0.95
           ? 1
-          : Math.round((totale / LARGEUR_CONTENU) * 1000) / 1000,
+          : Math.round((occupee / LARGEUR_CONTENU) * 1000) / 1000,
       visuels: rangee.visuels.map((v) => ({
         src: v.src,
         ratio: v.ratio,
