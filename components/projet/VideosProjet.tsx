@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 import type { FicheProjet } from "@/lib/projets";
 
 /** Vidéos en lecture automatique (muettes, en boucle) sur un aplat de couleur. */
@@ -11,8 +12,8 @@ export function VideosProjet({ videos }: { videos: NonNullable<FicheProjet["vide
         {videos.items.map((video) => (
           <video
             key={video.src}
-            src={video.src}
-            poster={video.poster}
+            src={asset(video.src)}
+            poster={asset(video.poster)}
             autoPlay
             muted
             loop

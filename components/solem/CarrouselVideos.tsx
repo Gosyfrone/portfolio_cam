@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { asset } from "@/lib/asset";
 import type { Video } from "@/lib/projets";
 import { RailArrows } from "../ui";
 
@@ -40,8 +41,8 @@ export function CarrouselVideos({ videos }: { videos: Video[] }) {
               {centre ? (
                 <video
                   key={video.src}
-                  src={video.src}
-                  poster={video.poster}
+                  src={asset(video.src)}
+                  poster={asset(video.poster)}
                   controls
                   playsInline
                   preload="metadata"
@@ -55,7 +56,7 @@ export function CarrouselVideos({ videos }: { videos: Video[] }) {
                   className="size-full"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={video.poster} alt="" className="size-full object-cover" />
+                  <img src={asset(video.poster)} alt="" className="size-full object-cover" />
                 </button>
               )}
             </div>
