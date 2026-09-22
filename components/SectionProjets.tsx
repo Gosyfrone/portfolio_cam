@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-import { projets } from "@/lib/data";
+import { projets, selectionHome } from "@/lib/data";
 import { CarteProjet } from "./CarteProjet";
 import { Rail, type RailHandle } from "./Rail";
 import { SectionTitre } from "./SectionTitre";
@@ -34,7 +34,7 @@ export function SectionProjets() {
         className="mt-10 pl-6 md:pl-16 2xl:pl-32"
       >
         {projets
-          .filter((projet) => projet.aPage !== false)
+          .filter((projet) => selectionHome.includes(projet.slug))
           .map((projet) => (
             <CarteProjet key={projet.slug} projet={projet} />
           ))}

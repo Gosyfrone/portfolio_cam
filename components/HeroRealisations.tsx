@@ -8,20 +8,38 @@ const colonnes = [
 
 /**
  * Hero sombre de la page Réalisations : deux colonnes de visuels qui
- * défilent en sens inverse. Le contenu texte de gauche est vide dans la
- * maquette ; seul le titre de page y est posé.
+ * défilent en sens inverse, et le bloc d'accroche à gauche.
  */
 export function HeroRealisations() {
   return (
     <section className="relative -mt-[96px] flex min-h-[100svh] overflow-hidden bg-ink pt-[96px] text-cream">
-      <div className="gutter relative z-10 flex flex-1 flex-col justify-end pb-10 md:pb-14">
-        <h1 className="text-5xl font-bold tracking-tight md:text-7xl">
-          Réalisations<span className="text-orange">.</span>
+      <div className="gutter relative z-10 flex flex-1 flex-col justify-center pb-10 md:pb-14">
+        <p className="text-xs font-bold tracking-wide">[SÉLECTION]</p>
+
+        <h1 className="mt-10 flex items-center gap-4 text-5xl tracking-tight md:gap-6 md:text-7xl">
+          <span className="font-bold">les</span>
+          <Image
+            src="/images/soleil-pastille.png"
+            alt=""
+            width={128}
+            height={128}
+            priority
+            className="size-[0.95em] shrink-0"
+          />
+          <span className="font-light italic">projets</span>
         </h1>
+
+        <p className="mt-5 max-w-[640px] text-pretty text-sm leading-relaxed md:text-base">
+          Découvrez une sélection de projets menés en print et en web, au sein
+          de différentes structures et pour des marques variées. Des créations
+          pensées pour traduire une identité, servir une stratégie et créer de
+          l&apos;impact.
+        </p>
+
         <a
           href="#liste"
           aria-label="Voir les projets"
-          className="mt-10 grid size-10 place-items-center rounded-full border border-cream/80 transition-colors hover:bg-cream hover:text-ink"
+          className="mt-16 grid size-10 place-items-center rounded-full border border-cream/80 transition-colors hover:bg-cream hover:text-ink md:mt-24"
         >
           <svg viewBox="0 0 24 24" className="size-5" fill="none" strokeWidth="1.6">
             <path

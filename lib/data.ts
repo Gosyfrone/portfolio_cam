@@ -105,8 +105,8 @@ export const projets: Projet[] = [
     slug: "domaine-de-la-gineste",
     nom: "DOMAINE DE LA GINESTE",
     tags: ["Vidéos", "Photos", "Print"],
-    image: null,
-    // Ni maquette ni visuels fournis : carte sans page projet.
+    image: "/images/cartes/11.webp",
+    // Vignette fournie, mais ni maquette ni texte pour la page projet.
     aPage: false,
   },
   {
@@ -122,6 +122,15 @@ export const projets: Projet[] = [
     image: "/images/cartes/13.webp",
   },
 ];
+
+/**
+ * Projets du rail « Sélection de projets » de la home.
+ * La home ne montre pas tout le catalogue : la maquette y remplace
+ * Espace Bocaud Jacou par le Domaine de la Gineste.
+ */
+export const selectionHome = projets
+  .filter((projet) => projet.slug !== "espace-bocaud-jacou")
+  .map((projet) => projet.slug);
 
 export const salonsFrancais: Evenement[] = [
   {
@@ -206,16 +215,34 @@ export const outils = [
   "Gigapixel",
 ];
 
-export const clients = [
-  { nom: "Asics", logo: "/images/logos/asics.svg" },
-  { nom: "Bourbon", logo: "/images/logos/bourbon.svg" },
-  { nom: "CMA CGM", logo: "/images/logos/cma-cgm.svg" },
-  { nom: "CNRS", logo: "/images/logos/cnrs.svg" },
-  { nom: "CPPM", logo: "/images/logos/cppm.svg" },
-  { nom: "Borealis", logo: "/images/logos/borealis.svg" },
-  { nom: "Rosajou", logo: "/images/logos/rosajou.svg" },
-  { nom: "Sharly Shaper", logo: "/images/logos/sharly-shaper.svg" },
-  // Manquants dans l'export Figma : CARMAT, Jacou (fichier 1×1 px)
+export type Client = {
+  nom: string;
+  logo: string;
+  /** Dimensions natives du fichier, en px CSS : ce sont celles de la maquette. */
+  largeur: number;
+  hauteur: number;
+};
+
+/**
+ * Bandeau « Ils m'ont fait confiance », dans l'ordre de la maquette.
+ *
+ * Chaque logo est dessiné à sa taille native : le designer les a équilibrés
+ * optiquement, un monogramme carré étant plus haut qu'un logotype en ligne.
+ * Les normaliser sur une hauteur commune casse cet équilibre.
+ */
+export const clients: Client[] = [
+  { nom: "Asics", logo: "/images/logos/asics.svg", largeur: 130, hauteur: 43 },
+  { nom: "Bourbon", logo: "/images/logos/bourbon.svg", largeur: 224, hauteur: 43 },
+  // Le fichier CMA CGM porte 30 px de marge en haut et en bas : c'est voulu.
+  { nom: "CMA CGM", logo: "/images/logos/cma-cgm.svg", largeur: 131, hauteur: 79 },
+  { nom: "CNRS", logo: "/images/logos/cnrs.svg", largeur: 63, hauteur: 63 },
+  // Absent de l'export Figma : détouré depuis Home.png.
+  { nom: "Carmat", logo: "/images/logos/carmat.png", largeur: 189, hauteur: 43 },
+  { nom: "CPPM", logo: "/images/logos/cppm.svg", largeur: 66, hauteur: 81 },
+  { nom: "Borealis", logo: "/images/logos/borealis.svg", largeur: 215, hauteur: 73 },
+  { nom: "Sharly Shaper", logo: "/images/logos/sharly-shaper.svg", largeur: 63, hauteur: 85 },
+  { nom: "Rosajou", logo: "/images/logos/rosajou.svg", largeur: 185, hauteur: 64 },
+  // Toujours manquant : Jacou (fichier 1×1 px dans l'export).
 ];
 
 export const contact = {

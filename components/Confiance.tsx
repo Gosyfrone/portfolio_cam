@@ -10,18 +10,21 @@ export function Confiance() {
         Ils m&apos;ont fait <span className="font-light italic">confiance</span>
       </h2>
 
+      {/* Hauteur de piste fixe et logos à leur taille native, centrés sur un
+          axe commun : l'écart reste le même de part et d'autre de la boucle. */}
       <Marquee duration={38} className="mt-10">
         {clients.map((client) => (
           <div
             key={client.nom}
-            className="flex h-16 w-[220px] shrink-0 items-center justify-center px-4"
+            className="flex h-[92px] shrink-0 items-center justify-center px-[38px]"
           >
             <Image
               src={client.logo}
               alt={client.nom}
-              width={180}
-              height={64}
-              className="h-full w-auto object-contain"
+              width={client.largeur}
+              height={client.hauteur}
+              className="w-auto max-w-none"
+              style={{ height: client.hauteur }}
             />
           </div>
         ))}

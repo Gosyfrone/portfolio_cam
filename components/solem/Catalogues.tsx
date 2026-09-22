@@ -4,13 +4,21 @@ import Image from "next/image";
 import { useLayoutEffect, useRef, useState } from "react";
 
 import { Pastille } from "../projet/Pastille";
-import { ImagePlaceholder } from "../ui";
 
+const dossier = "/images/projets/solem";
+
+/** Une zone peut porter plusieurs visuels : ils s'affichent alors côte à côte. */
 const zones = [
-  { id: "europe", label: "EUROPE", image: "/images/projets/solem/catalogue-europe.webp" },
-  // Visuels des catalogues KSA et USA pas encore fournis.
-  { id: "ksa", label: "KSA", image: null },
-  { id: "usa", label: "USA", image: null },
+  { id: "europe", label: "EUROPE", images: [`${dossier}/catalogue-europe.webp`] },
+  {
+    id: "ksa",
+    label: "KSA",
+    images: [
+      `${dossier}/catalogue-ksa-couvertures.webp`,
+      `${dossier}/catalogue-ksa.webp`,
+    ],
+  },
+  { id: "usa", label: "USA", images: [`${dossier}/catalogue-usa.webp`] },
 ] as const;
 
 type Zone = (typeof zones)[number]["id"];
@@ -69,20 +77,35 @@ export function Catalogues() {
         </div>
       </div>
 
-      <div className="relative aspect-[4/3] overflow-hidden rounded-[20px] bg-sand md:aspect-[1.39]">
-        {actif.image ? (
+      {actif.images.length === 1 ? (
+        <div className="relative aspect-[4/3] overflow-hidden rounded-[20px] bg-sand md:aspect-[1.39]">
           <Image
             key={actif.id}
-            src={actif.image}
+            src={actif.images[0]}
             alt={`Catalogue SOLEM ${actif.label}`}
             fill
             sizes="100vw"
             className="object-cover"
           />
-        ) : (
-          <ImagePlaceholder label={`Catalogue ${actif.label} — visuel à fournir`} />
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="grid gap-4 md:grid-cols-2">
+          {actif.images.map((image, i) => (
+            <div
+              key={image}
+              className="relative aspect-[4/3] overflow-hidden rounded-[20px] bg-sand"
+            >
+              <Image
+                src={image}
+                alt={`Catalogue SOLEM ${actif.label} — visuel ${i + 1}`}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }

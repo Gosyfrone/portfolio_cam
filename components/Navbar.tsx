@@ -11,7 +11,11 @@ export function Navbar() {
   return (
     <header className="pointer-events-none sticky top-6 z-50 gutter">
       <nav className="pointer-events-auto mx-auto flex h-[72px] w-full max-w-[940px] items-center justify-between rounded-[20px] bg-sand/90 pl-5 pr-4 backdrop-blur-md">
-        <Link href="/" aria-label="Accueil — Camille Hermantier Rivet">
+        <Link
+          href="/"
+          aria-label="Accueil — Camille Hermantier-Rivet"
+          className="flex items-center gap-3"
+        >
           <Image
             src="/logo-camille.svg"
             alt=""
@@ -19,6 +23,10 @@ export function Navbar() {
             height={44}
             priority
           />
+          {/* Masqué sur mobile : la barre n'a pas la place pour le nom entier. */}
+          <span className="hidden whitespace-nowrap text-[17px] text-orange sm:inline">
+            Camille Hermantier-Rivet
+          </span>
         </Link>
 
         <div className="flex items-center gap-6 sm:gap-10">
