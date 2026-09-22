@@ -12,7 +12,8 @@ export function Confiance() {
 
       {/* Hauteur de piste fixe et logos à leur taille native, centrés sur un
           axe commun : l'écart reste le même de part et d'autre de la boucle. */}
-      <Marquee duration={38} className="mt-10">
+      {/* Même vitesse que les rails d'images de la home (26 px/s). */}
+      <Marquee speed={26} className="mt-10">
         {clients.map((client) => (
           <div
             key={client.nom}
