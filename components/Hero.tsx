@@ -5,12 +5,9 @@ import { asset } from "@/lib/asset";
 /**
  * Hero de la home : plan large du Domaine de la Gineste en fond, muet et
  * en boucle, avec la signature « Bienvenue » posée par-dessus.
- *
- * ⚠️ Le rush n'est pas encore fourni. Tant que `VIDEO_FOND` vaut `null`,
- * l'affiche seule est rendue ; déposer le fichier dans public/videos/home/
- * et renseigner la constante suffit à basculer sur la vidéo.
+ * Passer `VIDEO_FOND` à `null` rend l'affiche seule.
  */
-const VIDEO_FOND: string | null = null;
+const VIDEO_FOND: string | null = "/videos/home/accueil.mp4";
 const AFFICHE = "/images/home-hero.jpg";
 
 export function Hero() {

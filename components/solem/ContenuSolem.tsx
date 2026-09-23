@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { asset } from "@/lib/asset";
 import type { Video } from "@/lib/projets";
 import { Pastille } from "../projet/Pastille";
 import { Bandeau } from "./Bandeau";
@@ -80,16 +81,22 @@ export function ContenuSolem() {
       </section>
 
       <section className="mt-24 md:mt-32">
-        {/* Photo et titre « VIDÉOS » viennent d'un seul visuel de la maquette. */}
-        <h2 className="sr-only">Vidéos</h2>
+        {/* Plan de la piscine, muet et en boucle, sous le titre de section. */}
         <div className="relative h-[180px] overflow-hidden md:h-[610px]">
-          <Image
-            src={`${dossier}/bandeau-videos.webp`}
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-cover"
+          <video
+            src={asset("/videos/solem/piscine.mp4")}
+            poster={asset("/videos/solem/piscine.jpg")}
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-hidden="true"
+            className="absolute inset-0 size-full object-cover"
           />
+          <div aria-hidden="true" className="absolute inset-0 bg-ink/40" />
+          <h2 className="relative grid h-full place-items-center text-4xl tracking-tight text-white md:text-6xl">
+            VIDÉOS
+          </h2>
         </div>
         <CarrouselVideos videos={videos} />
       </section>

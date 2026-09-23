@@ -17,9 +17,20 @@ enc "$R/SOLEM/Product Install BL EN.mp4" public/videos/solem/installation-bl -2:
 
 
 # Sharly Shaper : captures d'écran d'Instagram, on ne garde que le téléphone.
+# Le son est normalisé : la séquence 02 est enregistrée ~16 dB plus bas que les autres.
 for n in 01 02 03; do
   o=public/videos/sharly-shaper/sequence-$n
   $FF -y -v error -i "$R/SHARLY SHAPER/Séquence $n.mp4" -vf "crop=498:1080:710:0,fps=30" \
+    -af "loudnorm=I=-14:TP=-1:LRA=11" -ar 48000 \
     -c:v libx264 -preset slow -crf 25 -pix_fmt yuv420p -c:a aac -b:a 96k -ac 2 -movflags +faststart $o.mp4 &&
   $FF -y -v error -ss 1 -i $o.mp4 -frames:v 1 -q:v 3 $o.jpg && echo "ok $o"
 done
+
+# Fonds muets en boucle : home (Domaine de la Gineste) et bandeau « VIDÉOS » de SOLEM.
+bg() { # src dest crf
+  $FF -y -v error -i "$1" -vf "scale=1600:-2,fps=25" -c:v libx264 -preset slow -crf $3 -maxrate 3M -bufsize 6M \
+    -pix_fmt yuv420p -an -movflags +faststart "$2.mp4" && echo "ok $2"
+}
+bg "$R/home/Video_accueil.mp4" public/videos/home/accueil 31
+bg "$R/SOLEM/Video-piscine.mp4" public/videos/solem/piscine 30
+$FF -y -v error -ss 2 -i public/videos/solem/piscine.mp4 -frames:v 1 -q:v 3 public/videos/solem/piscine.jpg
