@@ -241,12 +241,12 @@ export const clients: Client[] = [
   { nom: "CPPM", logo: "/images/logos/cppm.svg", largeur: 66, hauteur: 81 },
   { nom: "Borealis", logo: "/images/logos/borealis.svg", largeur: 215, hauteur: 73 },
   { nom: "Sharly Shaper", logo: "/images/logos/sharly-shaper.svg", largeur: 63, hauteur: 85 },
-  { nom: "Rosajou", logo: "/images/logos/rosajou.svg", largeur: 185, hauteur: 64 },
+  { nom: "Rosajou", logo: "/images/logos/rosajou.svg", largeur: 203, hauteur: 64 },
   // Toujours manquant : Jacou (fichier 1×1 px dans l'export).
 ];
 
 export const contact = {
   email: "camillehermantierrivet@gmail.com",
   telephone: "06 31 59 95 99",
-  linkedin: "#",
+  linkedin: "https://www.linkedin.com/in/camille-hermantier-rivet-3b9108150/",
 };

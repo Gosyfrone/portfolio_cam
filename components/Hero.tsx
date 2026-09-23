@@ -42,7 +42,7 @@ export function Hero() {
       <div className="relative z-10 flex flex-col items-center">
         <Image src="/logo-camille.svg" alt="" width={70} height={70} priority />
 
-        <p className="mt-4 text-4xl font-light italic drop-shadow-sm md:text-5xl">
+        <p className="mt-4 text-3xl font-light italic drop-shadow-sm md:text-[40px]">
           Bienvenue
         </p>
 

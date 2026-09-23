@@ -20,6 +20,6 @@ enc "$R/SOLEM/Product Install BL EN.mp4" public/videos/solem/installation-bl -2:
 for n in 01 02 03; do
   o=public/videos/sharly-shaper/sequence-$n
   $FF -y -v error -i "$R/SHARLY SHAPER/Séquence $n.mp4" -vf "crop=498:1080:710:0,fps=30" \
-    -c:v libx264 -preset slow -crf 25 -pix_fmt yuv420p -an -movflags +faststart $o.mp4 &&
+    -c:v libx264 -preset slow -crf 25 -pix_fmt yuv420p -c:a aac -b:a 96k -ac 2 -movflags +faststart $o.mp4 &&
   $FF -y -v error -ss 1 -i $o.mp4 -frames:v 1 -q:v 3 $o.jpg && echo "ok $o"
 done

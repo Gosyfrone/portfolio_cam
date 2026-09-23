@@ -6,7 +6,7 @@ import { PillLink } from "./ui";
 
 export function Footer() {
   return (
-    <footer id="contact" className="scroll-mt-24 overflow-hidden bg-ink pt-20 text-cream">
+    <footer id="contact" className="scroll-mt-24 overflow-hidden bg-ink pt-20 text-cream md:pt-36">
       <div className="gutter flex flex-wrap items-start justify-between gap-12">
         <nav className="flex flex-wrap gap-4">
           <PillLink
@@ -62,8 +62,8 @@ export function Footer() {
         </div>
       </div>
 
-      <Marquee duration={30} pauseOnHover={false} className="mt-16 pb-8">
-        <span className="whitespace-nowrap pr-10 text-[clamp(4rem,14vw,13rem)] font-bold leading-none tracking-tight">
+      <Marquee duration={30} pauseOnHover={false} className="mt-20 pb-8 md:mt-40">
+        <span className="whitespace-nowrap pr-10 text-[clamp(4rem,16vw,20rem)] font-bold leading-none tracking-tight">
           CAMILLEHERMANTIERRIVET
         </span>
       </Marquee>
