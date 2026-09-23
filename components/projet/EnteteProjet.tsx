@@ -37,13 +37,29 @@ export function EnteteProjet({ fiche }: { fiche: FicheProjet }) {
             ) : null}
           </h1>
 
-          <div className="mt-8 space-y-4 text-[15px] leading-relaxed text-slate md:text-base">
+          {fiche.accroche ? (
+            <p className="mt-8 text-[13px] text-ink md:text-sm">{fiche.accroche}</p>
+          ) : null}
+
+          {/* Les maquettes refaites avec une accroche ont un texte plus grand et
+              aligné à gauche ; SOLEM et Sharly Shaper gardent l'ancienne mise en forme. */}
+          <div
+            className={`text-[15px] leading-relaxed text-slate ${
+              fiche.accroche
+                ? "mt-2 space-y-3 md:text-lg md:leading-snug"
+                : "mt-8 space-y-4 md:text-base"
+            }`}
+          >
             {fiche.description.map((p, i) => (
               <div key={i}>
                 {p.titre ? (
-                  <h2 className="mb-1 font-medium text-ink">{p.titre}</h2>
+                  <h2 className={`mb-1 font-medium text-ink ${fiche.accroche ? "md:text-[19px]" : ""}`}>
+                    {p.titre}
+                  </h2>
                 ) : null}
-                <p className="whitespace-pre-line md:text-justify">{p.texte}</p>
+                <p className={`whitespace-pre-line ${fiche.accroche ? "" : "md:text-justify"}`}>
+                  {p.texte}
+                </p>
               </div>
             ))}
           </div>

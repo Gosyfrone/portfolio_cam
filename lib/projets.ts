@@ -19,6 +19,8 @@ export type FicheProjet = {
   nom: string;
   /** Petite illustration à côté du titre (mascotte Spirou). */
   illustration?: string;
+  /** Petite ligne au-dessus de la description (« Client accompagné en agence → … »). */
+  accroche?: string;
   description: Paragraphe[];
   role: string[];
   /** Texte affiché à côté du visuel marqué `texte` dans lib/visuels.ts. */
@@ -94,14 +96,21 @@ export const fiches: FicheProjet[] = [
   {
     slug: "cma-cgm",
     nom: "CMA CGM",
+    accroche: "Client accompagné en agence → campagnes print et web",
     description: [
       {
         texte:
-          "CMA CGM est un client accompagné en agence, sur plusieurs campagnes déployées à travers des supports print et web, à destination de publics variés au sein de la compagnie.",
+          "Plusieurs campagnes déployées à travers des supports print et web, à destination de publics variés au sein de la compagnie.",
       },
       {
+        titre: "Heading to Safety",
         texte:
-          "La campagne Heading to Safety a impliqué la conception de l'univers graphique et illustratif dans son ensemble, décliné à travers les 12 best practices, diffusées sur des supports de communication interne et externe, dont une série de posts réseaux sociaux.\nD'autres campagnes, destinées aux équipages et pensées pour être déployées à bord des navires, ont donné lieu à la création de posters de sensibilisation aux risques psycho-sociaux, dédiés à la santé mentale en mer, de leaflets et safety posts Safety Barriers pour la prévention des gestes barrières, ainsi qu'à la conception d'un livre de recettes destiné aux cuisines de bord.",
+          "Conception de l'univers graphique et illustratif dans son ensemble, décliné à travers les 12 best practices, diffusées sur des supports de communication interne et externe, dont une série de posts réseaux sociaux.",
+      },
+      {
+        titre: "Communication équipages",
+        texte:
+          "Campagnes pensées pour être déployées à bord des navires : posters de sensibilisation aux risques psycho-sociaux dédiés à la santé mentale en mer, leaflets et safety posts Safety Barriers pour la prévention des gestes barrières, ainsi qu'un livre de recettes destiné aux cuisines de bord.",
       },
     ],
     role: ["Direction artistique", "Identité visuelle", "Graphisme"],
@@ -109,10 +118,17 @@ export const fiches: FicheProjet[] = [
   {
     slug: "bourbon",
     nom: "BOURBON",
+    accroche: "Client accompagné en agence → campagnes print",
     description: [
       {
+        titre: "Horizon",
         texte:
-          "Bourbon est un client accompagné en agence, pour lequel j'ai participé à la création d'Horizon, une plateforme interne dédiée à la gestion d'équipe. J'en ai conçu l'identité graphique, déclinée sur différents supports, brochure et template de présentation.\nLe projet s'est également étendu à la conception, en collaboration avec un illustrateur, d'une série de Safety Posters destinés aux navires de la compagnie.",
+          "Participation à la création d'Horizon, une plateforme interne dédiée à la gestion d'équipe : conception de l'identité graphique, déclinée sur différents supports : brochure, template de présentation.",
+      },
+      {
+        titre: "Safety Posters",
+        texte:
+          "Conception, en collaboration avec un illustrateur, d'une série de Safety Posters destinés aux navires de la compagnie.",
       },
     ],
     role: ["Direction artistique", "Identité visuelle", "Graphisme"],
@@ -120,10 +136,16 @@ export const fiches: FicheProjet[] = [
   {
     slug: "borealis",
     nom: "BOREALIS",
+    accroche: "Client accompagné en agence → campagnes print",
     description: [
       {
         texte:
-          "Borealis est l'identité vin du groupe C10, réseau français de distribution de boissons pour les professionnels. En agence, j'ai réalisé l'identité visuelle du catalogue 2021 dédié à la Foire aux Vins, pensée pour mettre en valeur la sélection de la marque.",
+          "Borealis est l'identité vin du groupe C10, réseau français de distribution de boissons pour les professionnels.",
+      },
+      {
+        titre: "Catalogue Foire aux Vins 2021",
+        texte:
+          "Réalisation de l'identité visuelle du catalogue 2021, pensée pour mettre en valeur la sélection de la marque.",
       },
     ],
     role: ["Identité visuelle", "Graphisme"],
@@ -131,10 +153,16 @@ export const fiches: FicheProjet[] = [
   {
     slug: "asics",
     nom: "ASICS",
+    accroche: "Client accompagné en agence → campagnes print",
     description: [
       {
         texte:
-          "Asics est une marque accompagnée en agence, pour laquelle j'ai conçu le format du mémo à destination des vendeurs en points de vente, à travers l'Europe un support pensé pour rythmer la relation avec le réseau, décliné deux fois par an selon les saisons : printemps/été et automne/hiver.\nDeux périodes de collaboration avec cette même agence, dont une en freelance, m'ont permis de faire évoluer le design intérieur de ce mémo au fil des déclinaisons, en l'adaptant aux temps forts de la marque dont plusieurs opérations spécifiques menées pour Decathlon.",
+          "Conception du format du mémo à destination des vendeurs en points de vente, à travers l'Europe. Un support pensé pour rythmer la relation avec le réseau, décliné deux fois par an selon les saisons : printemps/été et automne/hiver.",
+      },
+      {
+        titre: "Évolution du support",
+        texte:
+          "Deux périodes de collaboration avec cette même agence, dont une en freelance, ont permis de faire évoluer le design intérieur de ce mémo au fil des déclinaisons, en l'adaptant aux temps forts de la marque, dont plusieurs opérations spécifiques menées pour Decathlon.",
       },
     ],
     role: ["Direction artistique", "Identité visuelle", "Graphisme"],
@@ -142,10 +170,21 @@ export const fiches: FicheProjet[] = [
   {
     slug: "rosajou",
     nom: "ROSAJOU",
+    accroche: "Client accompagné en agence → campagnes print",
     description: [
       {
         texte:
-          "ROSAJOU est une marque française de maquillage haut de gamme pour petites filles, distribuée aux Galeries Lafayette ainsi que dans des points de vente plus confidentiels. Accompagnée en agence, j'ai contribué à la création de plusieurs supports destinés à dynamiser et renforcer la relation avec ses revendeurs, avec pour objectif de multiplier les points de contact tout au long de l'année.\nLe dispositif s'est notamment traduit par des courriers papier à destination des distributeurs France qui représentent 80 % du réseau pensés comme des attentions régulières, ainsi que par la production de visuels pour le site web, renouvelés trois à quatre fois par an. Le projet a également inclus la refonte du catalogue, dans sa version 2024, et la création d'une mini brochure dédiée à l'ensemble de la gamme.",
+          "ROSAJOU est une marque française de maquillage haut de gamme pour petites filles, distribuée aux Galeries Lafayette ainsi que dans des points de vente plus confidentiels.",
+      },
+      {
+        titre: "Relation revendeurs",
+        texte:
+          "Contribution à la création de plusieurs supports destinés à dynamiser et renforcer la relation avec les revendeurs, avec pour objectif de multiplier les points de contact tout au long de l'année : courriers papier à destination des distributeurs France (80 % du réseau), pensés comme des attentions régulières, et visuels pour le site web, renouvelés trois à quatre fois par an.",
+      },
+      {
+        titre: "Catalogue & brochure",
+        texte:
+          "Refonte du catalogue, dans sa version 2024, et création d'une mini brochure dédiée à l'ensemble de la gamme.",
       },
     ],
     role: ["Direction artistique", "Identité visuelle", "Graphisme", "Photos"],
@@ -154,10 +193,17 @@ export const fiches: FicheProjet[] = [
     slug: "parc-spirou",
     nom: "PARC SPIROU",
     illustration: "/images/projets/parc-spirou-mascotte.webp",
+    accroche: "Client accompagné en agence → campagnes print et web",
     description: [
       {
+        titre: "Communication 2018/2019",
         texte:
-          "Le Parc Spirou Provence est un client accompagné en agence, pour lequel j'ai contribué au graphisme ainsi qu'à la mise en œuvre du plan de communication 2018/2019, à la conception des supports print et web, et au déploiement des opérations marketing. Une mission qui s'étendait également à la thématisation du parc, à travers la création et la fabrication des décors, des coverings et de la signalétique.",
+          "Contribution au graphisme ainsi qu'à la mise en œuvre du plan de communication 2018/2019, à la conception des supports print et web, et au déploiement des opérations marketing.",
+      },
+      {
+        titre: "Thématisation du parc",
+        texte:
+          "Création et fabrication des décors, des coverings et de la signalétique.",
       },
     ],
     role: ["Identité visuelle", "Graphisme", "Print", "Web"],
@@ -165,10 +211,21 @@ export const fiches: FicheProjet[] = [
   {
     slug: "carmat",
     nom: "CARMAT",
+    accroche: "Client accompagné en agence → campagnes print",
     description: [
       {
         texte:
-          "Carmat est un client accompagné en agence, pour lequel j'ai participé à la création de l'identité de marque Aeson, ainsi qu'à la déclinaison des supports de communication print et web destinés aux médecins et aux patients. Un accompagnement qui s'est aussi étendu à l'organisation et à la communication de leurs séminaires et conférences.",
+          "Carmat est une entreprise française spécialisée dans la conception du cœur artificiel Aeson, destiné aux patients en insuffisance cardiaque.",
+      },
+      {
+        titre: "Identité de marque Aeson",
+        texte:
+          "Participation à la création de l'identité de marque Aeson, ainsi qu'à la déclinaison des supports de communication print et web destinés aux médecins et aux patients.",
+      },
+      {
+        titre: "Séminaires & conférences",
+        texte:
+          "Accompagnement dans l'organisation et la communication des séminaires et conférences.",
       },
     ],
     role: ["Identité visuelle", "Graphisme", "Print", "Web"],
@@ -176,14 +233,21 @@ export const fiches: FicheProjet[] = [
   {
     slug: "merea",
     nom: "MEREA",
+    accroche: "Projet fictif — Master, Intuit Lab",
     description: [
       {
         texte:
-          "MEREA est né dans le cadre de mon Master à Intuit Lab, comme un terrain d'exploration libre : imaginer une marque de A à Z, du concept à la stratégie de communication, en passant par l'identité visuelle et la maquette du site web.",
+          "Né comme un terrain d'exploration libre : imaginer une marque de A à Z, du concept à la stratégie de communication, en passant par l'identité visuelle et la maquette du site web.",
       },
       {
+        titre: "Le concept",
         texte:
-          "Le concept : révéler le Marseille cosmopolite, cette ville où se croisent tant de cultures sans toujours se rencontrer. MEREA prend la forme d'un social club réunissant cinq univers : cinéma, bar, restaurant, scène ouverte et épicerie pensés comme autant de points de rencontre. Chaque mois, une culture différente y est mise à l'honneur, invitant à la découverte et au partage à travers l'ensemble de ces espaces.",
+          "MEREA est un social club imaginé pour incarner la Marseille cosmopolite, un lieu de rencontre où les frontières culturelles s'effacent au profit de l'échange et du partage. Chaque mois, une culture différente y est mise à l'honneur et se découvre à travers cinq espaces : Le Cosmopolite (restaurant), Le Bar des Voyageurs, La Scène du Monde (scène ouverte), Ciné Horizon (cinéma) et Harmonie Sport (salle de sport).",
+      },
+      {
+        titre: "Identité et déclinaison",
+        texte:
+          "Une identité graphique en noir, blanc et orange, portée par une trame en demi-teintes et des illustrations qui évoquent le voyage et la mixité culturelle. Le site web décline ce concept mois après mois : programmation, réservations, plan du lieu, pour donner à chaque culture mise à l'honneur (ici, les Comores) un véritable espace d'expression.",
       },
     ],
     role: [
@@ -197,10 +261,11 @@ export const fiches: FicheProjet[] = [
   {
     slug: "espace-bocaud-jacou",
     nom: "ESPACE BOCAUD JACOU",
+    accroche: "Client accompagné en agence → campagnes print et web",
     description: [
       {
         texte:
-          "Espace Bocaud Jacou est un client accompagné en agence, pour lequel je créais et déclinais les supports print et web de chaque campagne de l'intégration web au suivi de production, jusqu'à l'impression des affiches et bâches grand format.",
+          "Création et déclinaison des supports print et web de chaque campagne, de l'intégration web au suivi de production, jusqu'à l'impression des affiches et bâches grand format.",
       },
     ],
     role: ["Graphisme", "Print", "Web"],
@@ -208,14 +273,16 @@ export const fiches: FicheProjet[] = [
   {
     slug: "peeka",
     nom: "PEEKA",
+    accroche: "Projet fictif — Master, Intuit Lab",
     description: [
       {
         texte:
-          "PEEKA est né dans le cadre de mon Master à Intuit Lab, comme un terrain d'exploration libre : imaginer une marque de savon de A à Z, du concept à la stratégie de communication, en passant par l'identité visuelle et la maquette du site web.",
+          "Né comme un terrain d'exploration libre : imaginer une marque de savon de A à Z, du concept à la stratégie de communication, en passant par l'identité visuelle et la maquette du site web.",
       },
       {
+        titre: "Le concept",
         texte:
-          "Le concept : repenser le savon de demain multifonctionnel, protecteur, capable de s'adapter à chaque foyer en cassant les codes du produit d'hygiène classique. L'enjeu : le rendre à la fois inoffensif et attrayant. Son nom, PEEKA, fait écho au syndrome pica ; son slogan résume l'ambition du projet « ce n'est pas que du savon. »",
+          "Repenser le savon de demain multifonctionnel, protecteur, capable de s'adapter à chaque foyer en cassant les codes du produit d'hygiène classique. L'enjeu : le rendre à la fois inoffensif et attrayant. Son nom, PEEKA, fait écho au syndrome pica, son slogan résume l'ambition du projet « ce n'est pas que du savon ».",
       },
     ],
     role: [
