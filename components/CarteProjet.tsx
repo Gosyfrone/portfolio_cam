@@ -17,7 +17,7 @@ export function CarteProjet({
   const visuel = (
     <div
       className={`relative overflow-hidden rounded-card bg-sand ${
-        pleineLargeur ? "aspect-[3/2]" : "aspect-[600/470]"
+        pleineLargeur ? "aspect-square md:aspect-[3/2]" : "aspect-[600/470]"
       }`}
     >
       {projet.image ? (
@@ -46,10 +46,10 @@ export function CarteProjet({
 
       <div className="mt-3 flex items-start justify-between gap-4">
         <div>
-          <h3 className="text-sm font-bold uppercase tracking-wide">
+          <h3 className="text-base font-bold uppercase tracking-wide md:text-sm">
             {projet.nom}
           </h3>
-          <p className="mt-0.5 text-[13px] text-orange">
+          <p className="mt-0.5 text-xs text-orange md:text-[13px]">
             {projet.tags.join(" | ")}
           </p>
         </div>

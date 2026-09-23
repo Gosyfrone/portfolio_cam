@@ -34,3 +34,10 @@ bg() { # src dest crf
 bg "$R/home/Video_accueil.mp4" public/videos/home/accueil 31
 bg "$R/SOLEM/Video-piscine.mp4" public/videos/solem/piscine 30
 $FF -y -v error -ss 2 -i public/videos/solem/piscine.mp4 -frames:v 1 -q:v 3 public/videos/solem/piscine.jpg
+
+# Home mobile : version verticale du même plan, choisie côté client (VideoFond).
+$FF -y -v error -i "$R/home/Video-home-site-responsive .mp4" -vf "scale=720:-2,fps=25" -c:v libx264 -preset slow -crf 30 \
+  -maxrate 2M -bufsize 4M -pix_fmt yuv420p -an -movflags +faststart public/videos/home/accueil-mobile.mp4
+for v in accueil accueil-mobile; do
+  $FF -y -v error -i public/videos/home/$v.mp4 -frames:v 1 -q:v 3 public/videos/home/$v.jpg
+done

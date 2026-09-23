@@ -7,7 +7,7 @@ export function Evenementiel() {
   return (
     <section
       id="evenementiel"
-      className="relative flex min-h-[438px] scroll-mt-24 flex-col justify-between overflow-hidden"
+      className="relative flex min-h-[237px] scroll-mt-24 md:min-h-[438px] flex-col justify-between overflow-hidden"
     >
       <Image
         src="/images/evenementiel-fond.png"
@@ -18,7 +18,7 @@ export function Evenementiel() {
       />
       <div className="absolute inset-0 bg-ink/20" aria-hidden="true" />
 
-      <div className="relative flex flex-1 items-center justify-center py-20">
+      <div className="relative flex flex-1 items-center justify-center py-10 md:py-20">
         <h2 className="text-center text-[clamp(2.5rem,9vw,8rem)] font-bold leading-none tracking-tight text-white">
           ÉVÉNEMENTIEL
         </h2>
@@ -28,7 +28,7 @@ export function Evenementiel() {
         items={servicesEvenementiel}
         duration={55}
         className="relative bg-ink/45 text-white backdrop-blur-[2px]"
-        itemClassName="text-base md:text-lg"
+        itemClassName="text-[15px] font-medium tracking-tight max-md:px-2 md:text-lg md:font-normal md:tracking-normal"
         separateur="dot"
         sparkleClassName="text-white/70"
       />

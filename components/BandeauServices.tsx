@@ -23,7 +23,7 @@ export function BandeauServices({
   return (
     <Marquee duration={duration} className={className}>
       {items.map((item) => (
-        <div key={item} className="flex items-center py-3.5">
+        <div key={item} className="flex items-center py-2.5 md:py-3.5">
           <span className={`whitespace-nowrap px-6 ${itemClassName}`}>
             {item}
           </span>

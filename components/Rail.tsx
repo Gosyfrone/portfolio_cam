@@ -28,6 +28,9 @@ export type RailHandle = {
  * Rail de cartes : défilement automatique infini + flèches manuelles.
  * Le contenu est dupliqué ; l'offset est bouclé modulo la moitié de la piste,
  * ce qui rend la couture invisible et permet de naviguer dans les deux sens.
+ *
+ * Sur mobile, pas de défilement automatique : une carte occupe l'écran, on
+ * avance aux flèches ou d'un glissement du doigt.
  */
 export function Rail({
   children,
@@ -40,12 +43,20 @@ export function Rail({
   const firstHalfRef = useRef<HTMLDivElement>(null);
   const state = useRef({ offset: 0, target: null as number | null, paused: false });
   const [reduced, setReduced] = useState(false);
+  const [mobile, setMobile] = useState(false);
+  const toucher = useRef<{ x: number; y: number } | null>(null);
 
   const step = useCallback(
     (direction: 1 | -1) => {
       const half = firstHalfRef.current;
       const card = half?.firstElementChild as HTMLElement | null;
-      const distance = card ? card.getBoundingClientRect().width + 32 : 400;
+      const suivante = card?.nextElementSibling as HTMLElement | null;
+      // L'écart entre deux cartes varie d'un rail à l'autre : on le mesure.
+      const distance = card
+        ? suivante
+          ? suivante.offsetLeft - card.offsetLeft
+          : card.getBoundingClientRect().width + 32
+        : 400;
       const s = state.current;
       s.target = (s.target ?? s.offset) + direction * distance;
     },
@@ -59,10 +70,18 @@ export function Rail({
 
   useEffect(() => {
     const query = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReduced(query.matches);
+    const petit = window.matchMedia("(max-width: 47.99rem)");
+    const update = () => {
+      setReduced(query.matches);
+      setMobile(petit.matches);
+    };
     update();
     query.addEventListener("change", update);
-    return () => query.removeEventListener("change", update);
+    petit.addEventListener("change", update);
+    return () => {
+      query.removeEventListener("change", update);
+      petit.removeEventListener("change", update);
+    };
   }, []);
 
   useEffect(() => {
@@ -87,7 +106,7 @@ export function Rail({
           } else {
             s.offset += delta * Math.min(1, dt * 6);
           }
-        } else if (!s.paused && !reduced) {
+        } else if (!s.paused && !reduced && !mobile) {
           s.offset -= speed * dt;
         }
 
@@ -110,13 +129,27 @@ export function Rail({
 
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [speed, reduced]);
+  }, [speed, reduced, mobile]);
 
   return (
     <div
-      className={`overflow-hidden ${className}`}
+      className={`touch-pan-y overflow-hidden ${className}`}
       onMouseEnter={() => (state.current.paused = true)}
       onMouseLeave={() => (state.current.paused = false)}
+      onTouchStart={(e) => {
+        const t = e.touches[0];
+        toucher.current = { x: t.clientX, y: t.clientY };
+      }}
+      onTouchEnd={(e) => {
+        const debut = toucher.current;
+        toucher.current = null;
+        if (!debut) return;
+        const t = e.changedTouches[0];
+        const dx = t.clientX - debut.x;
+        // Geste surtout vertical : c'est la page qu'on fait défiler.
+        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(t.clientY - debut.y)) return;
+        step(dx > 0 ? 1 : -1);
+      }}
     >
       <div ref={trackRef} className="flex w-max will-change-transform">
         <div ref={firstHalfRef} className={`flex shrink-0 gap-8 pr-8 ${trackClassName}`}>

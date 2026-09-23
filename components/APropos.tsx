@@ -25,9 +25,23 @@ const stats = [
 
 export function APropos() {
   return (
-    <section id="a-propos" className="gutter scroll-mt-28 bg-cream py-24">
-      <div className="grid gap-12 lg:grid-cols-[476px_1fr] lg:gap-20">
-        <div className="relative aspect-[476/525] w-full overflow-hidden rounded-[20px] bg-sand">
+    <section id="a-propos" className="gutter scroll-mt-28 bg-cream pt-10 pb-14 md:py-24">
+      {/* Sur mobile le titre passe au-dessus de la photo : la grille place les
+          trois blocs, la photo s'étend sur deux lignes à partir de lg. */}
+      <div className="grid gap-y-6 text-center md:text-left lg:grid-cols-[476px_1fr] lg:grid-rows-[auto_1fr] lg:gap-x-20">
+        <h2 className="flex items-center justify-center gap-2.5 text-[clamp(1rem,4.6vw,1.25rem)] font-bold tracking-tight md:justify-start md:gap-3 md:text-[34px] lg:col-start-2 lg:row-start-1">
+          Hello, moi c&apos;est
+          <Image
+            src="/logo-camille.svg"
+            alt=""
+            width={44}
+            height={44}
+            className="size-[45px] md:size-11"
+          />
+          <span className="font-light italic">Camille</span>
+        </h2>
+
+        <div className="relative aspect-[332/360] w-full overflow-hidden rounded-[20px] bg-sand md:aspect-[476/525] lg:col-start-1 lg:row-span-2 lg:row-start-1">
           <Image
             src="/images/portrait-camille.png"
             alt="Portrait de Camille Hermantier Rivet"
@@ -37,16 +51,13 @@ export function APropos() {
           />
         </div>
 
-        <div>
-          <h2 className="flex flex-wrap items-center gap-3 text-3xl font-bold tracking-tight md:text-[34px]">
-            Hello, moi c&apos;est
-            <Image src="/logo-camille.svg" alt="" width={44} height={44} />
-            <span className="font-light italic">Camille</span>
-          </h2>
-
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate">
-            Chargée de communication et événementiel, je conçois et pilote des
-            projets d&apos;identité visuelle, print, web et événementiel.
+        <div className="lg:col-start-2 lg:row-start-2">
+          <p className="mx-auto max-w-2xl text-[15px] leading-[1.9] text-slate md:mx-0 md:text-lg md:leading-relaxed">
+            <strong className="font-semibold md:font-normal">
+              Chargée de communication et événementiel,
+            </strong>{" "}
+            je conçois et pilote des projets d&apos;identité visuelle, print, web
+            et événementiel.
             <br />
             Chez SOLEM, je participe à la stratégie de communication de la marque
             sur un périmètre France, Europe, Afrique, Moyen-Orient. Ma mission
@@ -57,22 +68,22 @@ export function APropos() {
 
           <PillLink
             href="#contact"
-            className="mt-8 bg-orange text-white"
+            className="mt-6 bg-orange text-white md:mt-8"
             badgeClassName="bg-white text-orange"
           >
             Contact
           </PillLink>
 
-          <dl className="mt-12 grid gap-8 sm:grid-cols-3">
+          <dl className="mt-10 grid gap-12 sm:grid-cols-3 md:mt-12 md:gap-8">
             {stats.map((stat) => (
-              <div key={stat.label}>
-                <dt className="text-3xl font-bold tracking-tight">
+              <div key={stat.label} className="mx-auto max-w-[260px] md:mx-0 md:max-w-none">
+                <dt className="text-[38px] font-bold leading-none tracking-tight md:text-3xl md:leading-normal">
                   {stat.chiffre}
                 </dt>
-                <p className="mt-1 text-xs font-semibold uppercase tracking-wide">
+                <p className="mt-2 text-[15px] font-bold uppercase md:mt-1 md:text-xs md:font-semibold md:tracking-wide">
                   {stat.label}
                 </p>
-                <dd className="mt-2 text-sm leading-relaxed text-slate">
+                <dd className="mt-2 text-sm leading-snug text-slate md:leading-relaxed">
                   {stat.texte}
                 </dd>
               </div>

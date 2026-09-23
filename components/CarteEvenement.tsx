@@ -5,14 +5,14 @@ import { ImagePlaceholder } from "./ui";
 
 export function CarteEvenement({ evenement }: { evenement: Evenement }) {
   return (
-    <article className="w-[min(600px,78vw)] shrink-0">
-      <div className="relative aspect-[600/440] overflow-hidden rounded-card bg-sand">
+    <article className="w-[calc(100vw-3rem)] shrink-0 md:w-[min(600px,78vw)]">
+      <div className="relative aspect-[330/276] overflow-hidden md:aspect-[600/440] rounded-card bg-sand">
         {evenement.image ? (
           <Image
             src={evenement.image}
             alt={`${evenement.nom} — ${evenement.ville}`}
             fill
-            sizes="(max-width: 768px) 78vw, 600px"
+            sizes="(max-width: 768px) 100vw, 600px"
             className="object-cover transition-transform duration-500 hover:scale-[1.03]"
           />
         ) : (

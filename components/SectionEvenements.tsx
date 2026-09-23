@@ -17,7 +17,7 @@ export function SectionEvenements() {
   const evenements = onglet === "fr" ? salonsFrancais : salonsInternationaux;
 
   return (
-    <section className="bg-cream py-24">
+    <section className="bg-cream pt-14 pb-4 md:py-24">
       <SectionTitre action={<Toggle valeur={onglet} onChange={setOnglet} />}>
         Sélection des{" "}
         <span className="font-light italic text-sage">événements SOLEM</span>.
@@ -28,14 +28,14 @@ export function SectionEvenements() {
         key={onglet}
         controlsRef={controls}
         speed={26}
-        className="mt-10 pl-6 md:pl-16 2xl:pl-32"
+        className="mt-7 pl-6 md:mt-10 md:pl-16 2xl:pl-32"
       >
         {evenements.map((evenement) => (
           <CarteEvenement key={evenement.nom} evenement={evenement} />
         ))}
       </Rail>
 
-      <div className="gutter mt-8 flex justify-end">
+      <div className="gutter mt-3 flex justify-end md:mt-8">
         <RailArrows
           onPrev={() => controls.current?.prev()}
           onNext={() => controls.current?.next()}
@@ -99,7 +99,7 @@ function Toggle({
           role="tab"
           aria-selected={valeur === option.id}
           onClick={() => onChange(option.id)}
-          className={`relative z-10 whitespace-nowrap rounded-pill px-6 py-2.5 text-[15px] transition-colors duration-300 ${
+          className={`relative z-10 whitespace-nowrap rounded-pill px-4 py-2 text-[13px] md:px-6 md:py-2.5 md:text-[15px] transition-colors duration-300 ${
             valeur === option.id ? "text-white" : "text-sage"
           }`}
         >

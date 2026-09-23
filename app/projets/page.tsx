@@ -28,7 +28,7 @@ export default function Realisations() {
         <section
           id="liste"
           aria-label="Tous les projets"
-          className="gutter grid scroll-mt-28 gap-x-12 gap-y-14 py-20 md:grid-cols-2 md:py-28"
+          className="gutter grid scroll-mt-28 gap-x-12 gap-y-7 py-11 md:grid-cols-2 md:gap-y-14 md:py-28"
         >
           {projets.map((projet) => (
             <CarteProjet key={projet.slug} projet={projet} pleineLargeur />
