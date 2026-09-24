@@ -11,6 +11,10 @@
   --color-steel: #8d8b89;
 
   --font-sans: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  /* SF Pro n'est pas diffusable sur le web (licence Apple) : on l'appelle
+     par son nom, il s'affiche sur Mac/iOS et retombe sur Helvetica ailleurs. */
+  --font-sf: "SF Pro Display", "SF Pro", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Arial, sans-serif;
 
   --radius-card: 8px;
   --radius-pill: 999px;

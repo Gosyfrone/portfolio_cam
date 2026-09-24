@@ -43,8 +43,8 @@ export function Catalogues() {
   }, [zone]);
 
   return (
-    <section className="gutter">
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+    <section className="gutter max-md:px-8">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-4 max-md:flex-col max-md:justify-center">
         <Pastille>CATALOGUES</Pastille>
 
         <div

@@ -44,23 +44,31 @@ export function Rail({
   const state = useRef({ offset: 0, target: null as number | null, paused: false });
   const [reduced, setReduced] = useState(false);
   const [mobile, setMobile] = useState(false);
-  const toucher = useRef<{ x: number; y: number } | null>(null);
+  /** Glissement en cours : point de départ, offset d'origine, sens du geste. */
+  const toucher = useRef<{
+    x: number;
+    y: number;
+    offset: number;
+    horizontal: boolean | null;
+  } | null>(null);
+
+  // L'écart entre deux cartes varie d'un rail à l'autre : on le mesure.
+  const pas = useCallback(() => {
+    const card = firstHalfRef.current?.firstElementChild as HTMLElement | null;
+    const suivante = card?.nextElementSibling as HTMLElement | null;
+    return card
+      ? suivante
+        ? suivante.offsetLeft - card.offsetLeft
+        : card.getBoundingClientRect().width + 32
+      : 400;
+  }, []);
 
   const step = useCallback(
     (direction: 1 | -1) => {
-      const half = firstHalfRef.current;
-      const card = half?.firstElementChild as HTMLElement | null;
-      const suivante = card?.nextElementSibling as HTMLElement | null;
-      // L'écart entre deux cartes varie d'un rail à l'autre : on le mesure.
-      const distance = card
-        ? suivante
-          ? suivante.offsetLeft - card.offsetLeft
-          : card.getBoundingClientRect().width + 32
-        : 400;
       const s = state.current;
-      s.target = (s.target ?? s.offset) + direction * distance;
+      s.target = (s.target ?? s.offset) + direction * pas();
     },
-    [],
+    [pas],
   );
 
   useEffect(() => {
@@ -136,19 +144,35 @@ export function Rail({
       className={`touch-pan-y overflow-hidden ${className}`}
       onMouseEnter={() => (state.current.paused = true)}
       onMouseLeave={() => (state.current.paused = false)}
+      // Au doigt, la piste suit le glissement puis se cale sur la carte voisine.
       onTouchStart={(e) => {
         const t = e.touches[0];
-        toucher.current = { x: t.clientX, y: t.clientY };
+        const s = state.current;
+        s.offset = s.target ?? s.offset;
+        s.target = null;
+        s.paused = true;
+        toucher.current = { x: t.clientX, y: t.clientY, offset: s.offset, horizontal: null };
+      }}
+      onTouchMove={(e) => {
+        const geste = toucher.current;
+        if (!geste) return;
+        const t = e.touches[0];
+        const dx = t.clientX - geste.x;
+        const dy = t.clientY - geste.y;
+        // Geste surtout vertical : c'est la page qu'on fait défiler.
+        if (geste.horizontal === null && Math.abs(dx) + Math.abs(dy) > 8) {
+          geste.horizontal = Math.abs(dx) > Math.abs(dy);
+        }
+        if (geste.horizontal) state.current.offset = geste.offset + dx;
       }}
       onTouchEnd={(e) => {
-        const debut = toucher.current;
+        const geste = toucher.current;
         toucher.current = null;
-        if (!debut) return;
-        const t = e.changedTouches[0];
-        const dx = t.clientX - debut.x;
-        // Geste surtout vertical : c'est la page qu'on fait défiler.
-        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(t.clientY - debut.y)) return;
-        step(dx > 0 ? 1 : -1);
+        const s = state.current;
+        s.paused = false;
+        if (!geste?.horizontal) return;
+        const dx = e.changedTouches[0].clientX - geste.x;
+        s.target = geste.offset + (Math.abs(dx) < 40 ? 0 : Math.sign(dx) * pas());
       }}
     >
       <div ref={trackRef} className="flex w-max will-change-transform">

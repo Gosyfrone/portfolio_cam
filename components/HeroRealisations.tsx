@@ -15,7 +15,7 @@ const colonnes = [
  */
 export function HeroRealisations() {
   return (
-    <section className="relative -mt-[74px] flex min-h-[100svh] overflow-hidden bg-ink pt-[74px] text-cream md:-mt-[96px] md:pt-[96px]">
+    <section className="relative -mt-[50px] flex min-h-[100svh] overflow-hidden bg-ink pt-[74px] text-cream md:-mt-[96px] md:pt-[96px]">
       <div className="flex min-w-0 flex-1 flex-col pb-8 md:hidden">
         <div aria-hidden="true" className="flex flex-1 flex-col justify-center gap-6 py-10">
           {colonnes.map((images, i) => (

@@ -39,6 +39,10 @@ export function ContenuSolem() {
           image={`${dossier}/bandeau-operation.webp`}
           titre="Opération distributeurs"
           sousTitre="SOLEM WORLD CUP - 2026"
+          // Sur mobile, le titre remonte au-dessus de l'équipe au lieu de la couvrir.
+          texteClassName="font-sf max-md:justify-start max-md:pt-5"
+          titreClassName="max-md:text-2xl"
+          sousTitreClassName="max-md:mt-1 max-md:text-sm"
           position="50% 40%"
         />
         <div className="mt-8 md:mt-10">
@@ -46,6 +50,7 @@ export function ContenuSolem() {
             images={serie("operation", 9)}
             alt="SOLEM World Cup 2026"
             carteClassName="aspect-[1.44] w-[min(660px,80vw)]"
+            railClassName="pl-[10vw] md:pl-16 2xl:pl-32"
           />
         </div>
       </section>
@@ -63,11 +68,12 @@ export function ContenuSolem() {
             images={serie("plv", 10)}
             alt="PLV SOLEM"
             carteClassName="aspect-[0.93] w-[min(330px,62vw)]"
+            railClassName="pl-[19vw] md:pl-16 2xl:pl-32"
           />
         </div>
       </section>
 
-      <section className="gutter mt-10 md:mt-12">
+      <section className="gutter mt-10 max-md:px-8 max-md:text-center md:mt-12">
         <Pastille className="mb-6">WEBDESIGN</Pastille>
         <div className="relative aspect-[3208/2392] overflow-hidden rounded-[20px] bg-ink">
           <Image

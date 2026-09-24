@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import { ContenuGineste } from "@/components/projet/ContenuGineste";
 import { EnteteProjet } from "@/components/projet/EnteteProjet";
 import { GrilleVisuels } from "@/components/projet/GrilleVisuels";
 import { NavProjets } from "@/components/projet/NavProjets";
@@ -41,6 +42,8 @@ export default async function PageProjet({ params }: Props) {
 
         {slug === "solem" ? (
           <ContenuSolem />
+        ) : slug === "domaine-de-la-gineste" ? (
+          <ContenuGineste />
         ) : (
           <>
             <GrilleVisuels rangees={visuelsParProjet[slug] ?? []} fiche={fiche} />

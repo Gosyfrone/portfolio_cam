@@ -8,6 +8,9 @@ export function Bandeau({
   centre = false,
   position = "center",
   className = "h-[300px] md:h-[610px]",
+  texteClassName = "",
+  titreClassName = "",
+  sousTitreClassName = "",
 }: {
   image: string;
   titre: string;
@@ -16,6 +19,10 @@ export function Bandeau({
   /** object-position de la photo. */
   position?: string;
   className?: string;
+  /** Classes du bloc titre (police, etc.). */
+  texteClassName?: string;
+  titreClassName?: string;
+  sousTitreClassName?: string;
 }) {
   return (
     <div className={`relative overflow-hidden ${className}`}>
@@ -34,11 +41,11 @@ export function Bandeau({
       <div
         className={`gutter relative flex h-full flex-col text-white ${
           centre ? "items-center justify-center text-center" : "justify-center"
-        }`}
+        } ${texteClassName}`}
       >
-        <h2 className="text-4xl font-light tracking-tight md:text-6xl">{titre}</h2>
+        <h2 className={`text-4xl font-light tracking-tight md:text-6xl ${titreClassName}`}>{titre}</h2>
         {sousTitre ? (
-          <p className="mt-2 text-lg font-light uppercase md:text-3xl">{sousTitre}</p>
+          <p className={`mt-2 text-lg font-light uppercase md:text-3xl ${sousTitreClassName}`}>{sousTitre}</p>
         ) : null}
       </div>
     </div>

@@ -15,7 +15,7 @@ const VIDEO_MOBILE = {
 
 export function Hero() {
   return (
-    <section className="relative -mt-[74px] flex min-h-[100svh] flex-col items-center justify-end overflow-hidden pt-[74px] pb-8 text-white md:-mt-[96px] md:pt-[96px] md:pb-14">
+    <section className="relative -mt-[50px] flex min-h-[100svh] flex-col items-center justify-end overflow-hidden pt-[74px] pb-8 text-white md:-mt-[96px] md:pt-[96px] md:pb-14">
       <Image
         src="/images/home-hero.jpg"
         alt=""

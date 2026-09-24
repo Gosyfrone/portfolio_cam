@@ -9,7 +9,7 @@ import { SectionTitre } from "./SectionTitre";
 import { PillLink, RailArrows } from "./ui";
 
 /** Projets listés sur mobile à la place du rail, dans l'ordre de la maquette. */
-const SELECTION_MOBILE = ["solem", "asics", "sharly-shaper", "cma-cgm"];
+const SELECTION_MOBILE = ["solem", "domaine-de-la-gineste", "asics", "sharly-shaper", "cma-cgm"];
 
 export function SectionProjets() {
   const controls = useRef<RailHandle | null>(null);

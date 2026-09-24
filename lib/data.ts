@@ -106,8 +106,6 @@ export const projets: Projet[] = [
     nom: "DOMAINE DE LA GINESTE",
     tags: ["Vidéos", "Photos", "Print"],
     image: "/images/cartes/11.webp",
-    // Vignette fournie, mais ni maquette ni texte pour la page projet.
-    aPage: false,
   },
   {
     slug: "peeka",
@@ -184,13 +182,6 @@ export const salonsInternationaux: Evenement[] = [
     stand: "Stand 20 m²",
     editions: "Édition 2025",
     image: "/images/evenements/fima-espagne.png",
-  },
-  {
-    nom: "SMART CITIES",
-    ville: "ARABIE SAOUDITE",
-    stand: "Stand 36 m²",
-    editions: "Édition 2025 | 2027",
-    image: null,
   },
   {
     nom: "IA SHOW",

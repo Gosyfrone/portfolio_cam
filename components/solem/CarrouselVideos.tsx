@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import { asset } from "@/lib/asset";
 import type { Video } from "@/lib/projets";
@@ -27,6 +27,9 @@ export function CarrouselVideos({ videos }: { videos: Video[] }) {
 
   const courante = videos[actif];
 
+  // Glissement du doigt (mobile) : une vidéo par geste, les flèches restent.
+  const toucher = useRef<{ x: number; y: number } | null>(null);
+
   // Aucun pourcentage dans ces variables : elles servent à calculer des
   // positions horizontales, où « % » se rapporterait à la largeur du cadre.
   const hauteurCentre = `min(${HAUTEUR_CADRE}, calc(88vw / ${courante.ratio}))`;
@@ -34,7 +37,23 @@ export function CarrouselVideos({ videos }: { videos: Video[] }) {
   const bordCentre = `calc(50% + ${demiLargeurCentre} + var(--ecart))`;
 
   return (
-    <div className="overflow-hidden py-16 md:py-28">
+    <div
+      className="touch-pan-y overflow-hidden py-16 md:py-28"
+      onTouchStart={(e) => {
+        const t = e.touches[0];
+        toucher.current = { x: t.clientX, y: t.clientY };
+      }}
+      onTouchEnd={(e) => {
+        const debut = toucher.current;
+        toucher.current = null;
+        if (!debut) return;
+        const t = e.changedTouches[0];
+        const dx = t.clientX - debut.x;
+        // Geste surtout vertical : c'est la page qu'on fait défiler.
+        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(t.clientY - debut.y)) return;
+        aller(actif + (dx < 0 ? 1 : -1));
+      }}
+    >
       <div
         className="relative"
         style={

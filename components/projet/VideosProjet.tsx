@@ -50,7 +50,7 @@ export function VideosProjet({ videos }: { videos: NonNullable<FicheProjet["vide
   };
 
   return (
-    <div className="gutter mt-3 md:mt-4">
+    <div className="gutter mt-4 max-md:px-8">
       <div
         className="flex flex-col items-center justify-around gap-8 rounded-[20px] px-6 py-12 sm:flex-row md:py-20"
         style={{ backgroundColor: videos.fond }}

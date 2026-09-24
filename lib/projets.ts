@@ -27,6 +27,22 @@ export type FicheProjet = {
   blocTexte?: Paragraphe[];
   /** Vidéos affichées sous la grille, sur un fond de couleur. */
   videos?: { fond: string; items: Video[] };
+  /**
+   * Remplace le visuel `remplace` de la grille par deux colonnes de captures
+   * qui défilent en sens inverse (même animation que le hero Réalisations).
+   */
+  defilement?: { remplace: string; colonnes: [string, string] };
+  /**
+   * Mobile : rangées de la grille affichées en carrousel à glisser, repérées
+   * par l'un de leurs visuels. `images` remplace alors le contenu de la rangée
+   * (les posts un par un plutôt que la planche) ; `largeur` est celle d'une
+   * carte, en vw.
+   */
+  carrouselsMobile?: {
+    rangee: string;
+    images?: { src: string; ratio: number }[];
+    largeur?: number;
+  }[];
 };
 
 /** Ordre des flèches précédent / suivant en bas de page. */
@@ -63,7 +79,7 @@ export const fiches: FicheProjet[] = [
     description: [
       {
         texte:
-          "Sharly Shaper était une entreprise de communication digitale basée à Marseille, animée également par un collectif d'indépendants du secteur. J'y ai assuré la création graphique de la charte éditoriale, participé à l'élaboration de la ligne éditoriale, et contribué à la création de contenus sur les réseaux sociaux.",
+          "Sharly Shaper est une entreprise de communication digitale basée à Marseille, animée également par un collectif d'indépendants du secteur. J'y ai assuré la création graphique de la charte éditoriale, participé à l'élaboration de la ligne éditoriale, et contribué à la création de contenus sur les réseaux sociaux.",
       },
     ],
     role: ["Identité visuelle", "Graphisme", "Community manager"],
@@ -114,6 +130,17 @@ export const fiches: FicheProjet[] = [
       },
     ],
     role: ["Direction artistique", "Identité visuelle", "Graphisme"],
+    carrouselsMobile: [
+      { rangee: "/images/projets/cma-cgm/07.webp" },
+      {
+        rangee: "/images/projets/cma-cgm/10.webp",
+        images: Array.from({ length: 13 }, (_, i) => ({
+          src: `/images/projets/cma-cgm/post-${String(i).padStart(2, "0")}.webp`,
+          ratio: 1,
+        })),
+        largeur: 68,
+      },
+    ],
   },
   {
     slug: "bourbon",
@@ -257,6 +284,10 @@ export const fiches: FicheProjet[] = [
       "Webdesign",
       "Graphisme",
     ],
+    defilement: {
+      remplace: "/images/projets/merea/08.webp",
+      colonnes: ["/images/projets/merea/site-01.webp", "/images/projets/merea/site-02.webp"],
+    },
   },
   {
     slug: "espace-bocaud-jacou",
@@ -293,17 +324,28 @@ export const fiches: FicheProjet[] = [
       "Graphisme",
     ],
   },
+  {
+    slug: "domaine-de-la-gineste",
+    nom: "Domaine de la Gineste",
+    accroche: "Projet personnel - vidéo, drone, photo",
+    description: [
+      {
+        texte:
+          "Sur mon temps libre, j'aide le Domaine de la Gineste à travers la création de contenus (photo, vidéo, drone), mais aussi sur le terrain, au rythme des vendanges et des moissons.",
+      },
+    ],
+    role: ["Photographie", "Vidéo - Drône"],
+  },
 ];
 
 export function ficheParSlug(slug: string) {
   return fiches.find((fiche) => fiche.slug === slug);
 }
 
-/** Projets voisins pour la navigation en bas de page. */
+/** Projets voisins pour la navigation en bas de page (la liste boucle). */
 export function voisins(slug: string) {
   const i = fiches.findIndex((fiche) => fiche.slug === slug);
-  return {
-    precedent: i > 0 ? fiches[i - 1] : null,
-    suivant: i >= 0 && i < fiches.length - 1 ? fiches[i + 1] : null,
-  };
+  if (i < 0) return { precedent: null, suivant: null };
+  const n = fiches.length;
+  return { precedent: fiches[(i - 1 + n) % n], suivant: fiches[(i + 1) % n] };
 }

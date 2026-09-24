@@ -57,11 +57,13 @@ export function APropos() {
               Chargée de communication et événementiel,
             </strong>{" "}
             je conçois et pilote des projets d&apos;identité visuelle, print, web
-            et événementiel.
+            et animations de marque.
             <br />
             Chez SOLEM, je participe à la stratégie de communication de la marque
             sur un périmètre France, Europe, Afrique, Moyen-Orient. Ma mission
-            couvre deux volets : la communication de SOLEM, et l&apos;accompagnement
+            couvre deux volets :
+            <br />
+            la communication de SOLEM, et l&apos;accompagnement
             du réseau de distribution dans ses actions de communication, création
             de contenus graphiques, projets print, web et événementiel.
           </p>
